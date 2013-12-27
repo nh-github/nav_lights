@@ -21,14 +21,16 @@
 
 // Number of RGB LEDs in strand:
 //int nLEDs = 24;  // testing subsegments
-int nLEDs = 144;  // long (repaired) strand
-//int nLEDs = 32;
+//int nLEDs = 144; // long (repaired) strand
+int nLEDs = 32;
 
 // Chose 2 pins for output; can be any valid output pins:
 int dataPin  = A1;
 int clockPin = A0;
 //int dataPin  = 2;
 //int clockPin = 3;
+
+int season = 0;
 
 // First parameter is the number of LEDs in the strand.  The LED strips
 // are 32 LEDs per meter but you can extend or cut the strip.  Next two
@@ -59,24 +61,31 @@ void loop() {
   // toggle the built in LED on pin 13
   digitalWrite( 13, digitalRead( 13 ) ^ 1 );
 
-
-  //autumnPattern();
-
-  
-  int r = random(0,2);
-  if(0 == r){
-    Serial.print("running [faster] winter [");
-    Serial.print(r);
-    Serial.print("]\n");
-    winterPattern2();
+  if(0 == season){
+    Serial.print("running TEST CODE");
+    winterPattern3();
   }
-  else{
-    Serial.print("running [slower] winter [");
-    Serial.print(r);
-    Serial.print("]\n");
-    winterPattern();
+
+  if(3 == season){
+    autumnPattern();
   }
-  
+
+
+  if(4 == season){
+    int r = random(0,2);
+    if(0 == r){
+      Serial.print("running [faster] winter [");
+      Serial.print(r);
+      Serial.print("]\n");
+      winterPattern2();
+    }
+    else{
+      Serial.print("running [slower] winter [");
+      Serial.print(r);
+      Serial.print("]\n");
+      winterPattern();
+    }
+  }
   //  uint32_t a = strip.Color(0x3F, 2, 1);
   //  uint32_t b = strip.Color(0, 0, 0);
   //
@@ -375,6 +384,49 @@ void winterPattern2(void) {
   colorWipe(strip.Color(0, 0, 0), 150);
 }
 
+/*
+ * Winter color pattern
+ *
+ * Multicolor lights with twinkling
+ */
+void winterPattern3(void) {
+  Serial.println("Twinkling lights");
+  int nColors, pixelID, perColor, numRounds, wait, a, b, c;
+  perColor = 9;
+  numRounds = 9;
+  wait = 100;
+  a = 2;
+  b = 1;
+  uint32_t pixelColor;
+  uint32_t pixelColors[] = {
+    strip.Color(2 * a + b, b, b),
+    strip.Color(a + b, a + b, b),
+    strip.Color(b, 2 * a + b, b),
+    strip.Color(b, a + b, a + b),
+    strip.Color(b, b, 2 * a + b),
+    strip.Color(a + b, b, a + b),
+  };
+  /*
+  uint32_t pixelColors[] = {
+   strip.Color(a, 0, 0),
+   strip.Color(0, a, 0),
+   strip.Color(0, 0, a),
+   };
+   */
+
+  nColors = sizeof(pixelColors) / sizeof(pixelColors[0]);
+  for(int roundNo=0; roundNo < numRounds; roundNo++){
+    pixelColor = pixelColors[(rand() % nColors)];
+    for(int i=0; i < perColor; i++){
+      pixelID = rand() % nLEDs;
+      strip.setPixelColor(pixelID, pixelColor);
+      strip.show();
+      delay(wait);
+    }
+    delay(4 * wait);
+  }
+}
+
 // Run a single dot back and forth
 void colorBounce(uint32_t c, uint8_t wait) {
   int i;
@@ -491,6 +543,12 @@ uint32_t Wheel(uint16_t WheelPos)
   }
   return(strip.Color(r,g,b));
 }
+
+
+
+
+
+
 
 
 
