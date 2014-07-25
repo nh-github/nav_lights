@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 24 Jul 2014 03:25:37 PM HST
+EESchema Schematic File Version 2  date Thu 24 Jul 2014 11:01:35 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
