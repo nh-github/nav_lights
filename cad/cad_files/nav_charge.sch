@@ -1,0 +1,274 @@
+EESchema Schematic File Version 2  date Thu 24 Jul 2014 03:25:37 PM HST
+LIBS:local_parts
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:nav_light-cache
+EELAYER 25  0
+EELAYER END
+$Descr A4 11700 8267
+encoding utf-8
+Sheet 5 5
+Title ""
+Date "25 jul 2014"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Connection ~ 6650 3850
+Wire Wire Line
+	6650 3650 6650 3850
+Wire Wire Line
+	7050 3850 5750 3850
+Wire Wire Line
+	6650 4750 6650 5050
+Wire Wire Line
+	6050 4750 6050 5050
+Wire Wire Line
+	6350 4250 6350 4150
+Wire Wire Line
+	6350 4150 5750 4150
+Wire Wire Line
+	4100 4250 4100 5050
+Wire Wire Line
+	4100 4250 4250 4250
+Wire Wire Line
+	2000 5050 3350 5050
+Wire Wire Line
+	4250 3850 4100 3850
+Wire Wire Line
+	4100 3850 4100 3900
+Wire Wire Line
+	4100 3900 3900 3900
+Connection ~ 2300 3700
+Wire Wire Line
+	2300 3900 2300 3250
+Wire Wire Line
+	2300 3900 2700 3900
+Connection ~ 3200 3700
+Wire Wire Line
+	3200 3550 3200 3700
+Wire Wire Line
+	2500 3700 2300 3700
+Wire Wire Line
+	2300 3250 3000 3250
+Wire Wire Line
+	3000 3700 3400 3700
+Wire Wire Line
+	3400 3900 3100 3900
+Wire Wire Line
+	4250 3650 4100 3650
+Wire Wire Line
+	4100 3650 4100 3700
+Wire Wire Line
+	4100 3700 3900 3700
+Wire Wire Line
+	4100 5050 3850 5050
+Wire Wire Line
+	4250 4350 3100 4350
+Wire Wire Line
+	3100 4350 3100 5050
+Connection ~ 3100 5050
+Wire Wire Line
+	5750 4250 6050 4250
+Wire Wire Line
+	6350 5050 6350 4750
+Wire Wire Line
+	7050 4750 7050 5050
+Wire Wire Line
+	5750 3950 6650 3950
+Wire Wire Line
+	6650 3950 6650 4250
+Wire Wire Line
+	7050 3650 7050 4250
+Connection ~ 7050 3850
+$Comp
+L GND #PWR?
+U 1 1 53D0F9CD
+P 7050 5050
+F 0 "#PWR?" H 7050 5050 30  0001 C CNN
+F 1 "GND" H 7050 4980 30  0001 C CNN
+	1    7050 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 53D0F9CA
+P 6650 5050
+F 0 "#PWR?" H 6650 5050 30  0001 C CNN
+F 1 "GND" H 6650 4980 30  0001 C CNN
+	1    6650 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 53D0F9B7
+P 6350 5050
+F 0 "#PWR?" H 6350 5050 30  0001 C CNN
+F 1 "GND" H 6350 4980 30  0001 C CNN
+	1    6350 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 53D0F9AE
+P 6050 5050
+F 0 "#PWR?" H 6050 5050 30  0001 C CNN
+F 1 "GND" H 6050 4980 30  0001 C CNN
+	1    6050 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D?
+U 1 1 53D0F806
+P 2900 3900
+F 0 "D?" H 2900 4000 50  0000 C CNN
+F 1 "LED" H 2900 3800 50  0000 C CNN
+	1    2900 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R Rp102
+U 1 1 53D0E883
+P 3650 3700
+F 0 "Rp102" V 3730 3700 50  0000 C CNN
+F 1 "100" V 3650 3700 50  0000 C CNN
+	1    3650 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R Rp103
+U 1 1 53D0E880
+P 3650 3900
+F 0 "Rp103" V 3730 3900 50  0000 C CNN
+F 1 "270" V 3650 3900 50  0000 C CNN
+	1    3650 3900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R Rp104
+U 1 1 53D0E877
+P 3600 5050
+F 0 "Rp104" V 3680 5050 50  0000 C CNN
+F 1 "0.125" V 3600 5050 50  0000 C CNN
+	1    3600 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R Rp108
+U 1 1 53D0E86F
+P 7050 3400
+F 0 "Rp108" V 7130 3400 50  0000 C CNN
+F 1 "10k" V 7050 3400 50  0000 C CNN
+	1    7050 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L R Rp107
+U 1 1 53D0E86D
+P 6650 3400
+F 0 "Rp107" V 6730 3400 50  0000 C CNN
+F 1 "10k" V 6650 3400 50  0000 C CNN
+	1    6650 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L R Rp106
+U 1 1 53D0E85F
+P 6350 4500
+F 0 "Rp106" V 6430 4500 50  0000 C CNN
+F 1 "100k" V 6350 4500 50  0000 C CNN
+	1    6350 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L R Rp105
+U 1 1 53D0E859
+P 6050 4500
+F 0 "Rp105" V 6130 4500 50  0000 C CNN
+F 1 "75k" V 6050 4500 50  0000 C CNN
+	1    6050 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L THERMISTOR THp102
+U 1 1 53D0E843
+P 7050 4500
+F 0 "THp102" V 7150 4550 50  0000 C CNN
+F 1 "103AT-2" V 6950 4500 50  0000 C CNN
+	1    7050 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L THERMISTOR THp101
+U 1 1 53D0E839
+P 6650 4500
+F 0 "THp101" V 6750 4550 50  0000 C CNN
+F 1 "103AT-2" V 6550 4500 50  0000 C CNN
+	1    6650 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L PNP Qp101
+U 1 1 53D0E539
+P 3200 3350
+F 0 "Qp101" H 3200 3200 60  0000 R CNN
+F 1 "FCX718" H 3200 3500 60  0000 R CNN
+	1    3200 3350
+	0    1    -1   0   
+$EndComp
+$Comp
+L R Rp101
+U 1 1 53D0E519
+P 2750 3700
+F 0 "Rp101" V 2830 3700 50  0000 C CNN
+F 1 "10k" V 2750 3700 50  0000 C CNN
+	1    2750 3700
+	0    -1   -1   0   
+$EndComp
+Text HLabel 2000 5050 0    60   Input ~ 0
+gnd
+Text HLabel 1650 2850 0    60   Input ~ 0
+Vbatt
+$Comp
+L DS2712 Up101
+U 1 1 53D0DE44
+P 5000 4000
+F 0 "Up101" H 5000 3900 50  0000 C CNN
+F 1 "DS2712" H 5000 4100 50  0000 C CNN
+F 2 "MODULE" H 5000 4000 50  0001 C CNN
+F 3 "DOCUMENTATION" H 5000 4000 50  0001 C CNN
+	1    5000 4000
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
