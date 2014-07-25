@@ -1,0 +1,389 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+% Fix option clash
+\PassOptionsToPackage{svgnames}{xcolor}
+
+% Font packages
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text} % for TeX conventions like ``---''
+\usepackage{xunicode} % for LaTeX character names (accents, etc)
+\usepackage{xltxtra} % Extra customizations for XeLaTeX
+\usepackage{amssymb} % symbols
+\usepackage{marvosym} % symbols
+\usepackage{textcomp} % symbols
+
+% Font config
+\setmainfont{Linux Libertine O}
+\setsansfont[Scale = MatchUppercase]{Linux Biolinum O}
+\setmonofont[Scale = MatchUppercase]{Anonymous Pro}
+
+% Packages
+\usepackage{booktabs}
+\usepackage{cleveref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{paralist}
+\usepackage{siunitx}
+\usepackage{tabu}
+\usepackage{textcomp}
+\usepackage[]{todonotes}  % disable
+\usepackage[svgnames]{xcolor}
+\usepackage{ulem}
+
+%Config
+\geometry{letterpaper, margin=1.5cm, top=2cm}
+
+\hypersetup{
+  colorlinks,
+  citecolor={Violet},
+  linkcolor={White!15!Black},
+%  urlcolor={Blue}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{2pt} % customise the layout...
+\lhead{\hspace{.1em}Nav Lights}
+
+\chead{}
+\rhead{A73C20 LLC\hspace{.1em}}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+\title{Navigational Lights}
+\author{Noah Hafner}
+\author{}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+%************************************************************
+\section{current iteration (v1)}
+
+\begin{compactitem}
+	\item \href{http://www.luxeonstar.com/350mA-Non-Dimmable-MicroPuck-Driver-With-Leads-p/2009a.htm}{\SI{350}{\milli\ampere} LED driver (2xAA input)}
+	\item \href{http://www.luxeonstar.com/Green-530nm-20mm-Star-CoolBase-LED-161-lm-p/sr-01-m0100.htm}{high power LED}
+	\item \href{http://www.luxeonstar.com/25mm-Square-Alpha-Heat-Sink-p/lpd25-15b.htm}{heatsink}
+	\item 2xAA
+	\item toggle switch
+\end{compactitem}
+
+%************************************************************
+\section{next version (v1b)}
+minor iteration
+\begin{compactitem}
+	\item only move from toggle to waterproof pushbutton
+	\begin{compactitem}
+		\item M2011\dots is \textbf{NOT} waterproof
+		\item alternatives:
+		\begin{compactitem}
+			\item nkk wpt
+			\item C\&K AP series (pushbutton)
+			\item CW GPB series
+		\end{compactitem}
+	\end{compactitem}
+\end{compactitem}
+
+%**************************************************
+\subsection{status (2014-04-23)}
+\begin{compactitem}
+    % [\hspace{1.35em} \EURdig]  % <- if we want other symbols
+	\item \textbf{DONE} source toggle switch and dc power jack
+	\item \textbf{DONE} to enclosure (both on red enclosure)
+	\item test:
+	\begin{compactitem}
+		\item manufacturability checks
+		\begin{compactitem}
+			\item how to drill mounting holes
+			\item \dots in pelican cases --- 
+				Iolani I-lab laser cutter FTW!
+			\item \dots in hammond mfr enclosures
+			\item \dots in other enclosures
+		\end{compactitem}
+		\item tests:
+%		\begin{compactitem}
+		\begin{inparaenum}
+			\item sealing, 
+			\item usability,
+			\item lifetime,
+			\item \dots
+		\end{inparaenum}
+%		\end{compactitem}
+	\end{compactitem}
+	\item experiment w/ light and humidity sensors and micro controller
+	\begin{compactitem}
+		\item \href{https://code.google.com/p/sdfatlib/}{SdFat}: 
+			filesystem for logging to flash cards (what about teensy?)
+		\item parts for logging: uC, light sensor, hum sensor, card\dots
+	\end{compactitem}
+	\item test in-system battery charging
+	\begin{compactitem}
+		\item DS2711-DS2712 datasheet, fig.3 (\$5.5 from digikey)
+		%\item DS2715 datasheet, fig.6 (\$8.5 from digikey)
+		%\item bq2002t (\$2.49 from digikey;
+		%	eval board: DV2002L2/TL2, sluu007b.pdf)
+		%\item bq2005 
+	\end{compactitem}
+	\item test LED drivers (higher power, lower cost)
+	\begin{compactitem}
+		\item LT3490 boost 2xAA to 1x HP LED @\SI{350}{\milli\ampere}
+			(\$4.22 from digikey)
+%		\item LT1619 usable for SEPIC or similar with current 
+%			controlled output: \SIlist{350;700;1000}{\milli\ampere}
+%			\par check output power from 2xAA
+%			\par use current monitor (transconductance amplifier)
+%		\item other voltage feedback SMPS controller w/ current monitor
+%			[ZXCT1030 or whatever]
+	\end{compactitem}
+\end{compactitem}
+
+%************************************************************
+\section{next version (v1c)}
+\begin{compactitem}
+	\item charge NiMH pack inside enclosure
+	\begin{compactitem}
+		\item DC-in jack (waterproof)
+		\begin{compactitem}
+			\item barrel connector w/ push on cap (\$6)
+			\item micro USB w/ watertight screw-on cap (\$10-20)
+		\end{compactitem}
+		\item NiMH charge controller (balance?)
+		\begin{compactitem}
+			\item \href{http://www.analog.com/static/imported-files/tutorials/ptmsect5.pdf}{Battery charging overview app-note}
+			\item \href{http://www.radicalrc.com/balancecharging.htm}{NiMH pack balance charging}
+			\item BQ2002 NiMH charger IC, 
+				\$2.5 @\href{http://www.digikey.com/product-detail/en/BQ2002PN/296-9326-5-ND/379871}{digikey},
+				\href{http://www.ti.com/lit/ds/symlink/bq2002f.pdf}{datasheet}
+			\item BQ2004E NiMH charger IC,
+				\$5.5 @\href{http://www.digikey.com/product-detail/en/BQ2004EPN/296-9332-5-ND/379895}{digikey},
+				\href{http://www.ti.com/lit/ds/symlink/bq2004e.pdf}{datasheet}
+		\end{compactitem}
+	\end{compactitem}
+	\item power supply for LED drive:
+	\begin{compactitem}
+		\item micro-puck step-up (current)
+		\item boost (LT3490)
+		\item (or sepic, flyback, cuc, switched--cap) 
+%	\end{compactitem}
+%	\begin{compactitem}
+		\item \SIrange{2}{2.4}{\volt} supply to SMPS
+		\item start with \SI{350}{\milli\ampere} @\SI{3.25}{\volt} 
+			and scale to series LEDs (\SI{10}{\volt}) 
+			or up current (\SI{1}{\ampere})
+		\item MAX1698 (low current!?)
+	\end{compactitem}
+\end{compactitem}
+
+%************************************************************
+\section{next version (v2a)}
+\begin{compactitem}
+	\item case: same
+	\item power: same (or try LiPoly)
+	\item sw: adafruit waterproof switch
+	\item extra HW for experimentation:
+	\begin{compactitem}
+		\item uC and flash storage for logging data
+		\item uC power mode
+		\item LED driver(s)
+		\item power jack for charging
+			\\ \href{http://www.digikey.com/product-detail/en/L722AS/SC1392-ND/2238435}{L722AS} - jack,
+			\href{http://www.digikey.com/product-detail/en/JCAP/SC1396-ND/2251492}{cover}
+		\item LED lensing through case
+		\item light sensors (orientation? field of view?)
+		\item temp/humid sensors (conditions inside enclosure)
+	\end{compactitem}
+\end{compactitem}
+
+%**************************************************
+\subsection{experimental options}
+
+%****************************************
+\subsubsection{power distribution}
+\begin{compactitem}
+\item uC direct connect to battery ultra low power
+\item uC connect via soft power switch
+\item LED power through solid state power switch
+\end{compactitem}
+\href{http://www.digikey.com/product-detail/en/TPS2032D/296-2567-5-ND/306440}{TPS2032D} Power Distribution Switch, \SI{1.5}{\ampere}
+
+\href{http://www.digikey.com/product-search/en?pv7=2&k=tps27081a}{tps27081a} High Side Load Switch
+
+\href{http://www.digikey.com/product-detail/en/GPB556A05BW/CWI284-ND/3193552}{GPB556A05BW}, pushbutton switch, momentary, low power
+
+\href{http://www.digikey.com/product-detail/en/M2011SD3W01/360-3238-ND/1049303}{M2011SD3W01}, toggle switch, \SI{\ge 1}{\ampere}, waterproof, m-series, shorter lever
+
+\href{http://www.digikey.com/product-detail/en/M2011B2B3W01/360-2824-ND/2105185}{M2011B2B3W01}, toggle switch, \SI{\ge 1}{\ampere}, waterproof, m-series, longer lever
+
+\href{http://www.digikey.com/product-detail/en/AT4181/360-3019-ND/4507567}{NKK M-series boot} \$3/ea!!!
+%****************************************
+\subsubsection{LED driver}
+\par luxeonstar available parts can't handle input voltage range
+\par 
+\begin{compactitem}
+	\item \href{http://www.digikey.com/product-detail/en/STCF07PNR/497-10328-1-ND}{STCF07PNR}, QFN, 7 addl parts, 
+		\$4/ea w/ \$2 inductor
+		\\ \href{http://www.digikey.com/product-search/en/programmers-development-systems/evaluation-boards-led-drivers/2622547?k=STCF07}{demoboard} \$70?
+	\item \href{http://www.digikey.com/product-detail/en/LM3410XMF%2FNOPB/LM3410XMF%2FNOPBCT-ND/1778507}{LM3410XMF} (SOT23-5) \$3/ea
+		\\ \href{http://www.digikey.com/product-detail/en/LM3410XSDSEPEV/NOPB/LM3410XSDSEPEV%2FNOPB-ND/2506755} {demoboard} \$50, sepic, \SIrange{2.7}{5.5}{\volt} input
+	\item 
+	\item 
+\end{compactitem}
+
+%****************************************
+\subsubsection{3}
+
+%**************************************************
+\subsection{addl notes}
+What was in the sparkfun order
+what to order from digikey
+what to order from adafruit
+Schottky diode for pwer supply ORing: LSM115J
+% (\$0.7  \textcent) 
+%DIODE SCHOTTKY 15V 1A DO214BA
+%LSM115JE3/TR13
+
+%************************************************************
+\section{next version (v2b)}
+\begin{compactitem}
+	\item keep LED, base, heatsink and driver
+	\item test LiPoly cells for 1A sourcing
+	\item test switch and power plug for marine use
+	\item test light sensors (orientation? field of view?)
+	\item test uC and power switch (soft power button, a la flashlight)
+\end{compactitem}
+
+%**************************************************
+\subsection{parts}
+
+Parts list for experimentation:
+\\
+\begin{tabu}{cccccc}
+vend & id & \$ & model & dscr & notes
+\\ af & \href{https://www.adafruit.com/products/466}{466}
+    & 10 & VCNL4000 & Proximity / Light sensor
+	& \SIrange{0.25}{16}{\kilo \lux},
+	5V tolerant I\textsuperscript{2}C
+	%
+%\\ af & \href{https://www.adafruit.com/products/439}{439}
+%    & 6 & TSL2561 & digital luminosity / light sensor
+%	& \SIrange{0.1}{40}{\kilo \lux}, 
+%	I\textsuperscript{2}C, \SI{3.3}{\volt} \textbf{only}
+%	ordered from sparkfun
+%	%
+\\ af & \href{https://www.adafruit.com/products/1384}{1384}
+    & 4 & GA1A12S202 & Log-scale Analog Light Sensor
+	& \SIrange{3}{55}{\kilo \lux}, 
+	analog out
+	%
+%\\ af & \href{https://www.adafruit.com/products/280}{280}
+%    & 18 & [???] & USB/DC LiPoly charger
+%	& \SIrange{5}{12}{\volt} input, charge only
+%	ordered equiv from sparkfun
+%	%
+%\\ af & \href{https://www.adafruit.com/products/258}{258}
+%    & 10 & [???] & \SI{1.2}{\ampere\hour} LiPoly cell
+%	& \SI{4.5}{\watt\hour}
+%	ordered equiv from sparkfun
+%	%
+%\\ sfe & \href{https://www.sparkfun.com/products/10711}{10711}
+%    & 30 & [multi] & LiPower Shield
+%	& \SI{0.6}{\ampere} output @ \SI{5}{\volt},
+%	SoC monitor?
+%	ordered equiv (below)
+%	%
+\\ sfe & \href{https://www.sparkfun.com/products/11231}{11231}
+    & 20 & [multi] & Power Cell - LiPo (Charge+SMPS)
+	& \SI{0.6}{\ampere} output @ \SI{5}{\volt}
+	%
+%\\ sfe & \href{https://www.sparkfun.com/products/10161}{10161}
+%    & 15 & [???] & USB LiPoly Charger - Single Cell
+%	& 
+%	ordered powercell (superset of function)
+%	%
+\\ sfe & \href{https://www.sparkfun.com/products/10617}{10617}
+    & 10 & [???] & Li-Ion ``Fuel Gauge'' 
+	& State-of-Charge Estimator
+	%
+\\ sfe & \href{https://www.sparkfun.com/products/8483}{8483}
+    & 17 & [???] & \SI{2}{\ampere\hour} LiPoly cell
+	& \SI{7.4}{\watt\hour} ?
+	%
+\\ \hline SPARKFUN & ----
+    & -- & --- & ORDERED
+	& ----
+	%
+\\ SFE & \href{https://www.sparkfun.com/products/12055}{SEN-12055}
+	& 5.95 & TSL2561 & Luminosity Sensor Breakout &
+\\ SFE & \href{https://www.sparkfun.com/products/12064}{SEN-12064}
+	& 15.95 & HTU21D & Humidity Sensor Breakout &
+\\ SFE & PRT-11231 
+	& 19.95 && Power Cell - LiPo Charger/Booster &
+\\ SFE & TOL-10617 
+	& 9.95 && LiPo Fuel Gauge &
+\\ SFE & PRT-08483 
+	& 16.95 && LiPoly Cell - 2Ah &
+\end{tabu}
+
+second parts list:
+\begin{tabu}{cccccc}
+vend & id & \$ & model & dscr & notes
+
+\end{tabu}
+
+%\\ CAT4101 ON Semi, linear current sink?
+%$3 @newark
+
+%**************************************************
+\subsection{mechE discussion}
+
+Hamid:
+\begin{compactitem}
+\item ignition
+	\begin{compactitem}
+	\item UH club
+	\item working w/ company ``club internship''
+	\item interested in HICap, helping w/ EDA granting, etc\dots
+%	\item 
+	\end{compactitem}
+\item collaboration or help finding people w.r.t.:
+	\begin{compactitem}
+	\item mech design for nav lights
+	\item force sensing for paddle 
+	\end{compactitem}
+\item meet next week (friday?) to continue
+\end{compactitem}
+
+%************************************************************
+\section{next$^{\textrm 2}$ version}
+
+%%**************************************************
+%\subsection{foo}
+%%**************************************************
+%\subsubsection{bar}
+%**************************************************
+\subsubsection{urls/refs}
+
+\begin{compactitem}
+	\item \href{http://softsolder.com/2013/10/03/arduino-suicide-power-switch-first-light/}{power switch}
+	\item \href{http://www.instructables.com/id/Soft-Latch-Power-Switch-Ardweeny/}{power switch}
+	\item \href{https://electronics.stackexchange.com/questions/94796/are-there-any-consumer-grade-waterproofing-solutions}{waterproofing notes}
+	\item \href{http://www.candlepowerforums.com/vb/showthread.php?8583-Best-Chip-Step-Up-Circuit-Design-for-the-new-5W-Luxeon-Star/page5}{CandlePowerForums LED driver discussion}
+	\item \href{http://www.maximintegrated.com/app-notes/index.mvp/id/2031}{Maxim SMPS docs (basic tutorial)}
+	\item \href{http://www.maximintegrated.com/app-notes/index.mvp/id/1051}{Maxim SMPS docs (sepic equations)}
+	\item \href{http://www.maximintegrated.com/app-notes/index.mvp/id/2997}{Maxim SMPS docs (layout)}
+	\item 
+	\item 
+
+
+
+\end{compactitem}
+
+%************************************************************
+\end{document}
+%************************************************************
