@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 31 Jul 2014 08:40:21 PM HST
+EESchema Schematic File Version 2  date Fri 01 Aug 2014 11:18:16 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -36,7 +36,7 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
-Title ""
+Title "Battery Charger"
 Date "1 aug 2014"
 Rev ""
 Comp ""
@@ -45,29 +45,23 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	4200 4200 4200 4100
+Wire Wire Line
+	5900 1500 1500 1500
 Connection ~ 4200 5100
 Wire Wire Line
 	5200 5100 4200 5100
 Connection ~ 7700 6500
 Wire Wire Line
-	7700 6600 7700 6400
+	7700 6400 7700 6600
 Wire Wire Line
-	4200 5800 4200 6000
+	4200 6000 4200 5800
 Wire Wire Line
-	4200 4000 4200 4200
-Wire Wire Line
-	4200 4700 4200 5300
+	4200 5300 4200 4700
 Connection ~ 1500 2000
 Wire Wire Line
-	1500 1900 1500 3100
-Wire Wire Line
-	1100 1900 1100 2000
-Wire Wire Line
-	1100 2000 900  2000
-Wire Wire Line
 	4000 2000 4000 1800
-Wire Wire Line
-	1250 1500 1250 1150
 Wire Wire Line
 	4500 3100 4500 4500
 Connection ~ 7700 3500
@@ -77,12 +71,12 @@ Connection ~ 6100 6500
 Wire Wire Line
 	6100 6500 6100 5700
 Wire Wire Line
-	6000 6500 6000 6400
+	6000 6400 6000 6500
 Wire Wire Line
 	6000 5700 6000 5900
 Connection ~ 7700 5300
 Wire Wire Line
-	7700 5900 7700 5100
+	7700 5100 7700 5900
 Wire Wire Line
 	6600 5100 6700 5100
 Wire Wire Line
@@ -93,7 +87,7 @@ Connection ~ 7700 4300
 Wire Wire Line
 	6900 4300 7700 4300
 Wire Wire Line
-	7700 3600 7700 3300
+	7700 3300 7700 3600
 Connection ~ 5900 2300
 Wire Wire Line
 	5900 2300 5600 2300
@@ -110,22 +104,14 @@ Wire Wire Line
 Wire Wire Line
 	7600 2700 7700 2700
 Wire Wire Line
-	6900 3100 7400 3100
+	7400 3100 6900 3100
 Wire Wire Line
 	4500 3100 3300 3100
 Connection ~ 1700 2000
 Wire Wire Line
-	2400 3100 2800 3100
+	2800 3100 2400 3100
 Wire Wire Line
 	2100 2600 2100 2800
-Wire Notes Line
-	4500 1600 1900 1600
-Wire Notes Line
-	4500 1600 4500 2900
-Wire Notes Line
-	4500 2900 1900 2900
-Wire Notes Line
-	1900 2900 1900 1600
 Connection ~ 3000 2000
 Wire Wire Line
 	3000 2200 3000 2000
@@ -137,111 +123,10 @@ Wire Wire Line
 Wire Wire Line
 	2100 2000 2100 2200
 Wire Wire Line
-	2000 -800 4300 -800
-Connection ~ 5400 200 
-Wire Wire Line
-	5400 200  5400 -300
-Wire Wire Line
-	5400 -300 4100 -300
-Connection ~ 5900 -2100
-Wire Wire Line
-	8000 -2000 7900 -2000
-Wire Wire Line
-	7900 -2000 7900 -2200
-Wire Wire Line
-	7900 -2200 5900 -2200
-Wire Wire Line
-	5900 -2200 5900 -1400
-Wire Wire Line
-	2700 -1100 1500 -1100
-Connection ~ 2300 -2100
-Wire Wire Line
-	2000 -2100 3000 -2100
-Connection ~ 6300 -2000
-Wire Wire Line
-	7000 -2000 6100 -2000
-Wire Wire Line
-	5700 -900 6100 -900
-Connection ~ 6600 -2000
-Connection ~ 6000 -100
-Wire Wire Line
-	6300 -200 6300 -100
-Wire Wire Line
-	5900 -1400 5700 -1400
-Wire Wire Line
-	3400 -2100 5900 -2100
-Wire Wire Line
-	5700 -700 6000 -700
-Connection ~ 4000 200 
-Wire Wire Line
-	4300 -600 4000 -600
-Wire Wire Line
-	4300 -1400 3900 -1400
-Wire Wire Line
-	3400 -1100 3100 -1100
-Wire Wire Line
-	3400 -1400 3000 -1400
-Wire Wire Line
-	2500 -1400 2300 -1400
-Wire Wire Line
-	3200 -1800 3200 -1400
-Connection ~ 3200 -1400
-Wire Wire Line
-	3900 -1100 4300 -1100
-Wire Wire Line
-	4600 200  2000 200 
-Wire Wire Line
-	4300 -700 4100 -700
-Wire Wire Line
-	4100 -700 4100 -300
-Wire Wire Line
-	5700 -800 6300 -800
-Wire Wire Line
-	6300 -800 6300 -700
-Wire Wire Line
-	6000 0    6000 -200
-Wire Wire Line
-	6300 -1200 6300 -1400
-Connection ~ 6300 -100
-Wire Wire Line
-	6300 -2000 6300 -1800
-Wire Wire Line
-	5700 -1300 6000 -1300
-Wire Wire Line
-	6000 -1300 6000 -2100
-Wire Wire Line
-	6000 -2100 7800 -2100
-Wire Wire Line
-	7800 -2100 7800 -1800
-Wire Wire Line
-	7800 -1800 8000 -1800
-Wire Wire Line
-	6100 -900 6100 -2300
-Wire Wire Line
-	6100 -2300 1200 -2300
-Connection ~ 6100 -2000
-Wire Wire Line
-	2300 -1400 2300 -2100
-Wire Wire Line
-	1500 -1100 1500 -2300
-Connection ~ 1500 -2100
-Connection ~ 1500 -2300
-Wire Wire Line
-	5100 200  7800 200 
-Wire Wire Line
-	7800 200  7800 -1600
-Wire Wire Line
-	7800 -1600 8000 -1600
-Wire Wire Line
-	4300 -1000 4000 -1000
-Wire Wire Line
-	4000 -1000 4000 200 
-Connection ~ 4000 -600
-Wire Wire Line
 	1700 2000 1700 2200
 Connection ~ 2100 2000
 Wire Wire Line
-	3300 2000 2800 2000
+	2800 2000 3300 2000
 Wire Wire Line
 	4000 1800 2800 1800
 Wire Wire Line
@@ -261,7 +146,7 @@ Wire Wire Line
 Wire Wire Line
 	6200 3100 6200 3900
 Wire Wire Line
-	5900 2400 5900 2200
+	5900 1500 5900 2400
 Wire Wire Line
 	5900 3500 5900 3900
 Wire Wire Line
@@ -281,7 +166,7 @@ Wire Wire Line
 	7700 2900 7700 2000
 Connection ~ 7700 2700
 Wire Wire Line
-	7700 4200 7700 4500
+	7700 4500 7700 4200
 Wire Wire Line
 	6600 4900 6800 4900
 Wire Wire Line
@@ -306,12 +191,6 @@ Wire Wire Line
 	7700 5200 7900 5200
 Connection ~ 7700 5200
 Wire Wire Line
-	800  1300 1150 1300
-Wire Wire Line
-	1150 1300 1150 1150
-Wire Wire Line
-	2400 2000 1500 2000
-Wire Wire Line
 	7700 2000 3900 2000
 Connection ~ 4000 2000
 Wire Wire Line
@@ -321,12 +200,9 @@ Wire Wire Line
 Wire Wire Line
 	1100 2200 1100 2400
 Wire Wire Line
-	3800 4700 3800 5300
-Wire Wire Line
-	4200 4100 3800 4100
+	3800 5300 3800 4700
 Wire Wire Line
 	3800 4100 3800 4200
-Connection ~ 4200 4100
 Wire Wire Line
 	3800 5800 3800 5900
 Wire Wire Line
@@ -335,6 +211,50 @@ Connection ~ 4200 5900
 Wire Wire Line
 	5200 4900 3800 4900
 Connection ~ 3800 4900
+Wire Wire Line
+	900  2000 2400 2000
+Wire Wire Line
+	4200 4100 1500 4100
+Wire Wire Line
+	1500 4100 1500 1500
+Connection ~ 1500 3100
+Connection ~ 3800 4100
+Text Notes 8000 3700 0    60   ~ 0
+TODO: power path for charger voltage rail \n  (rather than cutting load power \n    while charging)
+Text Label 3400 3100 0    60   ~ 0
+ICHG_d
+Text Label 2600 2400 3    60   ~ 0
+ICHG_c
+Text Label 2900 1800 0    60   ~ 0
+ICHG_a
+Text Label 2900 2000 0    60   ~ 0
+ICHG_b
+Text Label 7000 3000 1    60   ~ 0
+CC1b
+Text Label 6200 3800 1    60   ~ 0
+CC1a
+Text Label 5900 3000 0    60   ~ 0
+CHG_V_b
+Text Label 5900 3800 1    60   ~ 0
+CHG_V_a
+Text Label 5600 3000 2    60   ~ 0
+LED_1b
+Text Label 5700 3800 1    60   ~ 0
+LED_1a
+Text Label 6700 4900 0    60   ~ 0
+VN_H
+Text Label 6900 4600 1    60   ~ 0
+VP1
+Text Label 6700 4400 1    60   ~ 0
+VP2
+Text Label 6000 5800 2    60   ~ 0
+TMR
+Text Label 5800 5800 2    60   ~ 0
+Ctst
+Text Label 4300 5100 0    60   ~ 0
+thm2
+Text Label 4300 4900 0    60   ~ 0
+thm1
 $Comp
 L GND #PWR?
 U 1 1 53DB3075
@@ -351,33 +271,6 @@ P 4200 6000
 F 0 "#PWR?" H 4200 6000 30  0001 C CNN
 F 1 "GND" H 4200 5930 30  0001 C CNN
 	1    4200 6000
-	1    0    0    -1  
-$EndComp
-$Comp
-L VDD #PWR?
-U 1 1 53DB3039
-P 4200 4000
-F 0 "#PWR?" H 4200 4100 30  0001 C CNN
-F 1 "VDD" H 4200 4110 30  0000 C CNN
-	1    4200 4000
-	1    0    0    -1  
-$EndComp
-$Comp
-L R Rp?
-U 1 1 53DB2A69
-P 8550 5800
-F 0 "Rp?" V 8630 5800 50  0000 C CNN
-F 1 "0.25" V 8550 5800 50  0000 C CNN
-	1    8550 5800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L VDD #PWR?
-U 1 1 53DB2A33
-P 1100 1900
-F 0 "#PWR?" H 1100 2000 30  0001 C CNN
-F 1 "VDD" H 1100 2010 30  0000 C CNN
-	1    1100 1900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -400,8 +293,6 @@ F 1 "120k" V 6000 6150 50  0000 C CNN
 $EndComp
 Text Notes 7250 5450 0    60   ~ 0
 WHY!?
-Text Notes 7100 6050 0    60   ~ 0
-check value
 $Comp
 L GND #PWR?
 U 1 1 53DA2C30
@@ -425,7 +316,7 @@ L R R14
 U 1 1 53DA26C1
 P 7700 6150
 F 0 "R14" V 7780 6150 50  0000 C CNN
-F 1 ".075" V 7700 6150 50  0000 C CNN
+F 1 ".27" V 7700 6150 50  0000 C CNN
 	1    7700 6150
 	1    0    0    -1  
 $EndComp
@@ -463,15 +354,6 @@ P 5900 2650
 F 0 "Rp?" V 5980 2650 50  0000 C CNN
 F 1 "150" V 5900 2650 50  0000 C CNN
 	1    5900 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L VDD #PWR?
-U 1 1 53DA226F
-P 5900 2200
-F 0 "#PWR?" H 5900 2300 30  0001 C CNN
-F 1 "VDD" H 5900 2310 30  0000 C CNN
-	1    5900 2200
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6000 3900
@@ -542,15 +424,6 @@ F 1 "GND" H 1100 2330 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD #PWR?
-U 1 1 53DA0D6B
-P 1500 1900
-F 0 "#PWR?" H 1500 2000 30  0001 C CNN
-F 1 "VDD" H 1500 2010 30  0000 C CNN
-	1    1500 1900
-	1    0    0    -1  
-$EndComp
-$Comp
 L GND #PWR?
 U 1 1 53DA0D36
 P 1700 2800
@@ -593,15 +466,6 @@ P 2150 3100
 F 0 "Rp?" V 2230 3100 50  0000 C CNN
 F 1 "330" V 2150 3100 50  0000 C CNN
 	1    2150 3100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_5 P?
-U 1 1 53DA0C54
-P 1250 750
-F 0 "P?" V 1200 750 50  0000 C CNN
-F 1 "CONN_5" V 1300 750 50  0000 C CNN
-	1    1250 750 
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -658,90 +522,14 @@ F 1 "ZXM62P02E6" H 2600 1920 60  0000 R CNN
 	1    2600 2100
 	0    1    -1   0   
 $EndComp
-Text Notes 4200 -1250 2    60   ~ 0
-2S -> open
-NoConn ~ 4300 -1300
 Text Notes 5000 3800 0    60   ~ 0
 LED2 prog:\nopen for 2S\nlow for 1S\nhigh for 2P
-NoConn ~ 4300 -900
-$Comp
-L R Rp?
-U 1 1 53D21B63
-P 1750 -2100
-F 0 "Rp?" V 1830 -2100 50  0000 C CNN
-F 1 "0" V 1750 -2100 50  0000 C CNN
-	1    1750 -2100
-	0    -1   -1   0   
-$EndComp
 Text Notes 8050 6050 0    60   ~ 0
-0.125 ohm -> approx. 1 Amp charge current
-$Comp
-L GND #PWR?
-U 1 1 53D1ECEA
-P 6300 -1200
-F 0 "#PWR?" H 6300 -1200 30  0001 C CNN
-F 1 "GND" H 6300 -1270 30  0001 C CNN
-	1    6300 -1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L C Cp101
-U 1 1 53D1EAC9
-P 6300 -1600
-F 0 "Cp101" H 6350 -1500 50  0000 L CNN
-F 1 "0.1" H 6350 -1700 50  0000 L CNN
-	1    6300 -1600
-	1    0    0    -1  
-$EndComp
-Text HLabel 7900 5200 2    60   BiDi ~ 0
+Voltage across VN0-VN1 -> 0.125 Volt\n0.27 ohm -> approx. 0.45 Amp\n0.125 ohm -> approx. 1 Amp charge current\n\n(0.125 / Rsense) * 0.969 -> charge current
+Text HLabel 7900 5200 2    60   Output ~ 0
 battery_neg
-Text HLabel 7900 3500 2    60   BiDi ~ 0
+Text HLabel 7900 3500 2    60   Output ~ 0
 battery_pos
-$Comp
-L GND #PWR?
-U 1 1 53D0F9AE
-P 6000 0
-F 0 "#PWR?" H 6000 0   30  0001 C CNN
-F 1 "GND" H 6000 -70 30  0001 C CNN
-	1    6000 0   
-	1    0    0    -1  
-$EndComp
-$Comp
-L LED D?
-U 1 1 53D0F806
-P 2900 -1100
-F 0 "D?" H 2900 -1000 50  0000 C CNN
-F 1 "LED" H 2900 -1200 50  0000 C CNN
-	1    2900 -1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L R Rp102
-U 1 1 53D0E883
-P 3650 -1400
-F 0 "Rp102" V 3730 -1400 50  0000 C CNN
-F 1 "100" V 3650 -1400 50  0000 C CNN
-	1    3650 -1400
-	0    -1   -1   0   
-$EndComp
-$Comp
-L R Rp103
-U 1 1 53D0E880
-P 3650 -1100
-F 0 "Rp103" V 3730 -1100 50  0000 C CNN
-F 1 "270" V 3650 -1100 50  0000 C CNN
-	1    3650 -1100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L R Rp104
-U 1 1 53D0E877
-P 4850 200
-F 0 "Rp104" V 4930 200 50  0000 C CNN
-F 1 "0.25" V 4850 200 50  0000 C CNN
-	1    4850 200 
-	0    -1   -1   0   
-$EndComp
 $Comp
 L R Rp108
 U 1 1 53D0E86F
@@ -758,24 +546,6 @@ P 3800 4450
 F 0 "Rp107" V 3880 4450 50  0000 C CNN
 F 1 "10k" V 3800 4450 50  0000 C CNN
 	1    3800 4450
-	-1   0    0    1   
-$EndComp
-$Comp
-L R Rp106
-U 1 1 53D0E85F
-P 6300 -450
-F 0 "Rp106" V 6380 -450 50  0000 C CNN
-F 1 "100k" V 6300 -450 50  0000 C CNN
-	1    6300 -450
-	-1   0    0    1   
-$EndComp
-$Comp
-L R Rp105
-U 1 1 53D0E859
-P 6000 -450
-F 0 "Rp105" V 6080 -450 50  0000 C CNN
-F 1 "75k" V 6000 -450 50  0000 C CNN
-	1    6000 -450
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -796,37 +566,8 @@ F 1 "103AT-2" V 3700 5550 50  0000 C CNN
 	1    3800 5550
 	1    0    0    -1  
 $EndComp
-$Comp
-L PNP Qp101
-U 1 1 53D0E539
-P 3200 -2000
-F 0 "Qp101" H 3200 -2150 60  0000 R CNN
-F 1 "FCX718" H 3200 -1850 60  0000 R CNN
-	1    3200 -2000
-	0    1    -1   0   
-$EndComp
-$Comp
-L R Rp101
-U 1 1 53D0E519
-P 2750 -1400
-F 0 "Rp101" V 2830 -1400 50  0000 C CNN
-F 1 "10k" V 2750 -1400 50  0000 C CNN
-	1    2750 -1400
-	0    -1   -1   0   
-$EndComp
 Text HLabel 900  2200 0    60   Input ~ 0
-gnd
+chgr_gnd
 Text HLabel 900  2000 0    60   Input ~ 0
 +5V
-$Comp
-L DS2712 Up101
-U 1 1 53D0DE44
-P 5000 -1000
-F 0 "Up101" H 5000 -1100 50  0000 C CNN
-F 1 "DS2712" H 5000 -900 50  0000 C CNN
-F 2 "MODULE" H 5000 -1000 50  0001 C CNN
-F 3 "DOCUMENTATION" H 5000 -1000 50  0001 C CNN
-	1    5000 -1000
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
