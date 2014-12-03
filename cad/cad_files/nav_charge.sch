@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Dec 2014 01:36:59 AM HST
+EESchema Schematic File Version 2  date Tue 02 Dec 2014 10:18:06 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -35,9 +35,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 4 4
+Sheet 2 4
 Title "Battery Charger"
-Date "2 dec 2014"
+Date "3 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
