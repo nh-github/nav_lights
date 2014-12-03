@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Dec 2014 10:18:06 PM HST
+EESchema Schematic File Version 2  date Tue 02 Dec 2014 11:37:56 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,6 +45,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 4300 4800 2    60   Input ~ 0
+charge_status
 Connection ~ 3100 6200
 Wire Wire Line
 	3100 6200 3200 6200
@@ -228,7 +230,7 @@ L R R?
 U 1 1 547C6270
 P 4900 1800
 F 0 "R?" V 4980 1800 50  0000 C CNN
-F 1 "R" V 4900 1800 50  0000 C CNN
+F 1 "DNP" V 4900 1800 50  0000 C CNN
 	1    4900 1800
 	1    0    0    -1  
 $EndComp
