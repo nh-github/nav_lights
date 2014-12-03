@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Dec 2014 06:44:52 PM HST
+EESchema Schematic File Version 2  date Tue 02 Dec 2014 10:18:06 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,33 +45,35 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L R R?
-U 1 1 547E9539
-P 3900 4150
-F 0 "R?" V 3980 4150 50  0000 C CNN
-F 1 "R" V 3900 4150 50  0000 C CNN
-	1    3900 4150
-	1    0    0    -1  
-$EndComp
+Connection ~ 3100 6200
 Wire Wire Line
-	4250 4250 4250 4750
+	3100 6200 3200 6200
 Wire Wire Line
-	4250 4750 3750 4750
+	3200 6200 3200 6100
+Wire Wire Line
+	2700 3300 2700 3900
+Wire Wire Line
+	2900 3200 2900 3300
 Wire Wire Line
 	5800 2500 5500 2500
 Wire Wire Line
 	5500 2500 5500 2400
 Wire Wire Line
-	9000 1000 8800 1000
+	6400 2200 5700 2200
 Connection ~ 2300 1000
 Wire Wire Line
-	2000 1000 4900 1000
+	2000 1000 2300 1000
+Wire Wire Line
+	2300 1000 4600 1000
+Wire Wire Line
+	4600 1000 4900 1000
 Connection ~ 4900 2200
 Wire Wire Line
 	4900 2050 4900 2200
 Wire Wire Line
-	4100 2700 4100 2500
+	4100 2500 4100 2600
+Wire Wire Line
+	4100 2600 4100 2700
 Wire Wire Line
 	2500 1800 2300 1800
 Wire Wire Line
@@ -85,21 +87,29 @@ Connection ~ 3300 1600
 Wire Wire Line
 	3300 1600 3500 1600
 Wire Wire Line
-	3300 2000 3300 1400
+	3300 1400 3300 1600
 Wire Wire Line
-	3100 1800 3300 1800
+	3300 1600 3300 1800
+Wire Wire Line
+	3300 1800 3300 2000
+Wire Wire Line
+	3300 1800 3100 1800
 Connection ~ 3300 1800
 Wire Wire Line
 	3900 1600 4100 1600
 Wire Wire Line
 	3900 1200 4100 1200
 Wire Wire Line
-	4100 1200 4100 2000
+	4100 1200 4100 1600
+Wire Wire Line
+	4100 1600 4100 1800
+Wire Wire Line
+	4100 1800 4100 2000
 Connection ~ 4100 1600
 Wire Wire Line
 	4600 2000 4600 2200
 Wire Wire Line
-	4600 1000 4600 1600
+	4600 1600 4600 1000
 Wire Wire Line
 	3300 2500 3300 2600
 Wire Wire Line
@@ -113,7 +123,9 @@ Wire Wire Line
 Wire Wire Line
 	2200 1100 2200 1300
 Wire Wire Line
-	4600 2200 5700 2200
+	4600 2200 4900 2200
+Wire Wire Line
+	4900 2200 5700 2200
 Wire Wire Line
 	5700 2200 5700 2400
 Wire Wire Line
@@ -122,24 +134,50 @@ Wire Wire Line
 	5800 2600 5700 2600
 Wire Wire Line
 	5700 2600 5700 2700
-$Comp
-L +5V #PWR?
-U 1 1 547E94E8
-P 4250 4250
-F 0 "#PWR?" H 4250 4340 20  0001 C CNN
-F 1 "+5V" H 4250 4340 30  0000 C CNN
-	1    4250 4250
-	1    0    0    -1  
-$EndComp
+Wire Wire Line
+	2900 3900 2900 3800
+Wire Wire Line
+	3100 6300 3100 6200
+Wire Wire Line
+	3100 6200 3100 6100
 $Comp
 L ARDUINO_PRO_MINI U?
-U 1 1 547E94C0
+U 1 1 547EB67E
 P 3000 5000
 F 0 "U?" H 3000 4900 50  0000 C CNN
-F 1 "ARDUINO_PRO_MINI" H 3000 5650 50  0000 C CNN
+F 1 "ARDUINO_PRO_MINI" V 3100 5350 50  0000 C CNN
 F 2 "MODULE" H 3000 5000 50  0001 C CNN
 F 3 "DOCUMENTATION" H 3000 5000 50  0001 C CNN
 	1    3000 5000
+	1    0    0    -1  
+$EndComp
+Text Label 2900 3200 1    60   ~ 0
+Vppath
+$Comp
+L GND #PWR?
+U 1 1 547E9671
+P 3100 6300
+F 0 "#PWR?" H 3100 6300 30  0001 C CNN
+F 1 "GND" H 3100 6230 30  0001 C CNN
+	1    3100 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 547E9539
+P 2900 3550
+F 0 "R?" V 2980 3550 50  0000 C CNN
+F 1 "DNP" V 2900 3550 50  0000 C CNN
+	1    2900 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 547E94E8
+P 2700 3300
+F 0 "#PWR?" H 2700 3390 20  0001 C CNN
+F 1 "+5V" H 2700 3390 30  0000 C CNN
+	1    2700 3300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -162,8 +200,6 @@ F 1 "GND" H 5700 2630 30  0001 C CNN
 $EndComp
 Text Label 4000 1200 0    60   ~ 0
 switch_control
-Text Label 8800 1000 2    60   ~ 0
-Vppath
 $Comp
 L GND #PWR?
 U 1 1 547DAB88
@@ -173,18 +209,16 @@ F 1 "GND" H 2200 1230 30  0001 C CNN
 	1    2200 1300
 	1    0    0    -1  
 $EndComp
-Text HLabel 9000 1000 2    60   Input ~ 0
+Text HLabel 6400 2200 2    60   Input ~ 0
 powerpath_vdd
-Text HLabel 9000 1100 2    60   Input ~ 0
+Text HLabel 4300 4900 2    60   Input ~ 0
 led_status
-Text HLabel 9000 1200 2    60   Output ~ 0
+Text HLabel 4300 5000 2    60   Output ~ 0
 led_ctrl
 Text HLabel 2000 1100 0    60   Input ~ 0
 battery_neg
 Text HLabel 2000 1000 0    60   Input ~ 0
 battery_pos
-Text Notes 6150 4200 0    60   ~ 0
-Arduino pro mini 3.3/5  (footprint? pinout?)
 Text Notes 6300 2450 0    60   ~ 0
 Vbat\n+5V\nGND
 Text Notes 5100 1700 0    60   ~ 0
@@ -209,39 +243,16 @@ F 1 "CONN_3" V 6200 2500 40  0000 C CNN
 	1    6150 2500
 	1    0    0    -1  
 $EndComp
-Text Notes 7600 5450 0    60   ~ 0
+Text Notes 4050 4050 0    60   ~ 0
 jumper towards DS2712::LED1 for charger activity monitoring
-Text Notes 7600 5550 0    60   ~ 0
+Text Notes 4000 4700 0    60   ~ 0
 PC3 - jumper to LED driver for control
-Text Notes 7600 5750 0    60   ~ 0
-Use for temp sensing and other I2C
-Text Notes 7600 6300 0    60   ~ 0
-INT0/INT1 for detecting button push
-Text Notes 7600 6100 0    60   ~ 0
-RS232 - style serial port for debug
-Text Notes 7600 4900 0    60   ~ 0
-ICSP
-Text Notes 7600 5100 0    60   ~ 0
-8 MHz clock crystal setup a la ardu pro 3V3
-$Comp
-L CONN_6 P?
-U 1 1 53DE4465
-P 8350 4650
-F 0 "P?" V 8300 4650 60  0000 C CNN
-F 1 "CONN_6" V 8400 4650 60  0000 C CNN
-	1    8350 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L ATMEGA328P-P IC?
-U 1 1 53DE42CE
-P 6500 5500
-F 0 "IC?" H 5800 6750 50  0000 L BNN
-F 1 "ATMEGA328P-P" H 6700 4100 50  0000 L BNN
-F 2 "DIL28" H 5900 4150 50  0001 C CNN
-	1    6500 5500
-	1    0    0    -1  
-$EndComp
+Text Notes 2000 5400 2    60   ~ 0
+Use I2C for temp \nand other sensors \n
+Text Notes 4000 4450 0    60   ~ 0
+INT0/INT1 for \ndetecting button push
+Text Notes 2200 4400 2    60   ~ 0
+RS232 - style serial port for debug\n(or use FTDI pins on end)
 $Comp
 L GND #PWR?
 U 1 1 53DB8078
