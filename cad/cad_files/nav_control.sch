@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Dec 2014 02:12:38 AM HST
+EESchema Schematic File Version 2  date Tue 02 Dec 2014 06:44:52 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "2 dec 2014"
+Date "3 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,8 +45,23 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 4000 1200 0    60   ~ 0
-switch_control
+$Comp
+L R R?
+U 1 1 547E9539
+P 3900 4150
+F 0 "R?" V 3980 4150 50  0000 C CNN
+F 1 "R" V 3900 4150 50  0000 C CNN
+	1    3900 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 4250 4250 4750
+Wire Wire Line
+	4250 4750 3750 4750
+Wire Wire Line
+	5800 2500 5500 2500
+Wire Wire Line
+	5500 2500 5500 2400
 Wire Wire Line
 	9000 1000 8800 1000
 Connection ~ 2300 1000
@@ -82,9 +97,7 @@ Wire Wire Line
 	4100 1200 4100 2000
 Connection ~ 4100 1600
 Wire Wire Line
-	5100 2200 4600 2200
-Wire Wire Line
-	4600 2200 4600 2000
+	4600 2000 4600 2200
 Wire Wire Line
 	4600 1000 4600 1600
 Wire Wire Line
@@ -99,6 +112,56 @@ Wire Wire Line
 	2000 1100 2200 1100
 Wire Wire Line
 	2200 1100 2200 1300
+Wire Wire Line
+	4600 2200 5700 2200
+Wire Wire Line
+	5700 2200 5700 2400
+Wire Wire Line
+	5700 2400 5800 2400
+Wire Wire Line
+	5800 2600 5700 2600
+Wire Wire Line
+	5700 2600 5700 2700
+$Comp
+L +5V #PWR?
+U 1 1 547E94E8
+P 4250 4250
+F 0 "#PWR?" H 4250 4340 20  0001 C CNN
+F 1 "+5V" H 4250 4340 30  0000 C CNN
+	1    4250 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L ARDUINO_PRO_MINI U?
+U 1 1 547E94C0
+P 3000 5000
+F 0 "U?" H 3000 4900 50  0000 C CNN
+F 1 "ARDUINO_PRO_MINI" H 3000 5650 50  0000 C CNN
+F 2 "MODULE" H 3000 5000 50  0001 C CNN
+F 3 "DOCUMENTATION" H 3000 5000 50  0001 C CNN
+	1    3000 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 547E62DF
+P 5500 2400
+F 0 "#PWR?" H 5500 2490 20  0001 C CNN
+F 1 "+5V" H 5500 2490 30  0000 C CNN
+	1    5500 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 547E62B9
+P 5700 2700
+F 0 "#PWR?" H 5700 2700 30  0001 C CNN
+F 1 "GND" H 5700 2630 30  0001 C CNN
+	1    5700 2700
+	1    0    0    -1  
+$EndComp
+Text Label 4000 1200 0    60   ~ 0
+switch_control
 Text Label 8800 1000 2    60   ~ 0
 Vppath
 $Comp
@@ -122,8 +185,8 @@ Text HLabel 2000 1000 0    60   Input ~ 0
 battery_pos
 Text Notes 6150 4200 0    60   ~ 0
 Arduino pro mini 3.3/5  (footprint? pinout?)
-Text Notes 4950 2600 0    60   ~ 0
-Vbat\n+5V\nGND\npinout order? \nrotation?
+Text Notes 6300 2450 0    60   ~ 0
+Vbat\n+5V\nGND
 Text Notes 5100 1700 0    60   ~ 0
 for power switching \nbypass (always on)
 $Comp
@@ -135,15 +198,15 @@ F 1 "R" V 4900 1800 50  0000 C CNN
 	1    4900 1800
 	1    0    0    -1  
 $EndComp
-Text Notes 5600 2800 0    60   ~ 0
-header for power supply \n(boost  to 3.3 or 5 V)
+Text Notes 5800 2800 0    60   ~ 0
+header for power supply \n(boost  to 3.3 or 5 V)\ncheck rotation...
 $Comp
 L CONN_3 K?
 U 1 1 546DDB52
-P 6250 2550
-F 0 "K?" V 6200 2550 50  0000 C CNN
-F 1 "CONN_3" V 6300 2550 40  0000 C CNN
-	1    6250 2550
+P 6150 2500
+F 0 "K?" V 6100 2500 50  0000 C CNN
+F 1 "CONN_3" V 6200 2500 40  0000 C CNN
+	1    6150 2500
 	1    0    0    -1  
 $EndComp
 Text Notes 7600 5450 0    60   ~ 0
