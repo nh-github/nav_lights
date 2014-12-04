@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:36:01 PM HST
+EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:36:52 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -151,10 +151,10 @@ PWR_FAULT
 Text Label 4000 5000 0    60   ~ 0
 PWR_FAULT
 $Comp
-L GND #PWR?
+L GND #PWR01
 U 1 1 547FD4F0
 P 4500 2500
-F 0 "#PWR?" H 4500 2500 30  0001 C CNN
+F 0 "#PWR01" H 4500 2500 30  0001 C CNN
 F 1 "GND" H 4500 2430 30  0001 C CNN
 	1    4500 2500
 	1    0    0    -1  
@@ -190,10 +190,10 @@ $EndComp
 Text Label 2900 3200 1    60   ~ 0
 Vppath
 $Comp
-L GND #PWR?
+L GND #PWR02
 U 1 1 547E9671
 P 3100 6300
-F 0 "#PWR?" H 3100 6300 30  0001 C CNN
+F 0 "#PWR02" H 3100 6300 30  0001 C CNN
 F 1 "GND" H 3100 6230 30  0001 C CNN
 	1    3100 6300
 	1    0    0    -1  
@@ -208,28 +208,28 @@ F 1 "DNP" V 2900 3550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR?
+L +5V #PWR03
 U 1 1 547E94E8
 P 2700 3300
-F 0 "#PWR?" H 2700 3390 20  0001 C CNN
+F 0 "#PWR03" H 2700 3390 20  0001 C CNN
 F 1 "+5V" H 2700 3390 30  0000 C CNN
 	1    2700 3300
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR?
+L +5V #PWR04
 U 1 1 547E62DF
 P 6200 2400
-F 0 "#PWR?" H 6200 2490 20  0001 C CNN
+F 0 "#PWR04" H 6200 2490 20  0001 C CNN
 F 1 "+5V" H 6200 2490 30  0000 C CNN
 	1    6200 2400
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR05
 U 1 1 547E62B9
 P 6400 2700
-F 0 "#PWR?" H 6400 2700 30  0001 C CNN
+F 0 "#PWR05" H 6400 2700 30  0001 C CNN
 F 1 "GND" H 6400 2630 30  0001 C CNN
 	1    6400 2700
 	1    0    0    -1  
@@ -237,10 +237,10 @@ $EndComp
 Text Label 4000 1200 0    60   ~ 0
 switch_control
 $Comp
-L GND #PWR?
+L GND #PWR06
 U 1 1 547DAB88
 P 2200 1300
-F 0 "#PWR?" H 2200 1300 30  0001 C CNN
+F 0 "#PWR06" H 2200 1300 30  0001 C CNN
 F 1 "GND" H 2200 1230 30  0001 C CNN
 	1    2200 1300
 	1    0    0    -1  
@@ -284,10 +284,10 @@ jumper towards DS2712::LED1 for charger activity monitoring
 Text Notes 4900 4400 0    60   ~ 0
 P2 (INT0) for power button sensing\nP3 (INT1) for charger status sensing\nP4 for led status sensing (polled)
 $Comp
-L GND #PWR?
+L GND #PWR07
 U 1 1 53DB8078
 P 4100 2700
-F 0 "#PWR?" H 4100 2700 30  0001 C CNN
+F 0 "#PWR07" H 4100 2700 30  0001 C CNN
 F 1 "GND" H 4100 2630 30  0001 C CNN
 	1    4100 2700
 	1    0    0    -1  
