@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 03 Dec 2014 01:00:34 PM HST
+EESchema Schematic File Version 2  date Wed 03 Dec 2014 04:59:28 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "3 dec 2014"
+Date "4 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -143,10 +143,10 @@ uC_PWR_SENSE
 Text HLabel 4000 4500 2    60   Input ~ 0
 charge_status
 $Comp
-L ARDUINO_PRO_MINI U?
+L ARDUINO_PRO_MINI Uc101
 U 1 1 547EB67E
 P 3000 5000
-F 0 "U?" H 3000 4900 50  0000 C CNN
+F 0 "Uc101" H 3000 4900 50  0000 C CNN
 F 1 "ARDUINO_PRO_MINI" V 3100 5350 50  0000 C CNN
 F 2 "MODULE" H 3000 5000 50  0001 C CNN
 F 3 "DOCUMENTATION" H 3000 5000 50  0001 C CNN
@@ -165,10 +165,10 @@ F 1 "GND" H 3100 6230 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R?
+L R Rc101
 U 1 1 547E9539
 P 2900 3550
-F 0 "R?" V 2980 3550 50  0000 C CNN
+F 0 "Rc101" V 2980 3550 50  0000 C CNN
 F 1 "DNP" V 2900 3550 50  0000 C CNN
 	1    2900 3550
 	1    0    0    -1  
@@ -226,10 +226,10 @@ Vbat\n+5V\nGND
 Text Notes 5300 1700 0    60   ~ 0
 for power switching \nbypass (always on)
 $Comp
-L R R?
+L R Rp303
 U 1 1 547C6270
 P 5100 1800
-F 0 "R?" V 5180 1800 50  0000 C CNN
+F 0 "Rp303" V 5180 1800 50  0000 C CNN
 F 1 "DNP" V 5100 1800 50  0000 C CNN
 	1    5100 1800
 	1    0    0    -1  
@@ -237,10 +237,10 @@ $EndComp
 Text Notes 6000 2800 0    60   ~ 0
 header for power supply \n(boost  to 3.3 or 5 V)\ncheck rotation...
 $Comp
-L CONN_3 K?
+L CONN_3 Kp301
 U 1 1 546DDB52
 P 6350 2500
-F 0 "K?" V 6300 2500 50  0000 C CNN
+F 0 "Kp301" V 6300 2500 50  0000 C CNN
 F 1 "CONN_3" V 6400 2500 40  0000 C CNN
 	1    6350 2500
 	1    0    0    -1  
@@ -265,55 +265,55 @@ uC_PWR_CTRL
 Text Label 5700 2000 0    60   ~ 0
 Vppath
 $Comp
-L MOSFET_P Q?
+L MOSFET_P Qp301
 U 1 1 53D1B1AA
 P 4700 1800
-F 0 "Q?" H 4700 1990 60  0000 R CNN
+F 0 "Qp301" H 4700 1990 60  0000 R CNN
 F 1 "MOSFET_P" H 4700 1620 60  0000 R CNN
 	1    4700 1800
 	1    0    0    -1  
 $EndComp
 $Comp
-L DIODE D?
+L DIODE Dp301
 U 1 1 53D1B1A5
 P 3700 1200
-F 0 "D?" H 3700 1300 40  0000 C CNN
+F 0 "Dp301" H 3700 1300 40  0000 C CNN
 F 1 "DIODE" H 3700 1100 40  0000 C CNN
 	1    3700 1200
 	1    0    0    -1  
 $EndComp
 $Comp
-L DIODE D?
+L DIODE Dp302
 U 1 1 53D1B19F
 P 3700 1600
-F 0 "D?" H 3700 1700 40  0000 C CNN
+F 0 "Dp302" H 3700 1700 40  0000 C CNN
 F 1 "DIODE" H 3700 1500 40  0000 C CNN
 	1    3700 1600
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R?
+L R Rp302
 U 1 1 53D1B197
 P 4100 2250
-F 0 "R?" V 4180 2250 50  0000 C CNN
+F 0 "Rp302" V 4180 2250 50  0000 C CNN
 F 1 "R" V 4100 2250 50  0000 C CNN
 	1    4100 2250
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R?
+L R Rp301
 U 1 1 53D1B192
 P 3300 2250
-F 0 "R?" V 3380 2250 50  0000 C CNN
+F 0 "Rp301" V 3380 2250 50  0000 C CNN
 F 1 "R" V 3300 2250 50  0000 C CNN
 	1    3300 2250
 	1    0    0    -1  
 $EndComp
 $Comp
-L SW_PUSH SW?
+L SW_PUSH SWp301
 U 1 1 53D1B188
 P 2800 1800
-F 0 "SW?" H 2950 1910 50  0000 C CNN
+F 0 "SWp301" H 2950 1910 50  0000 C CNN
 F 1 "SW_PUSH" H 2800 1720 50  0000 C CNN
 	1    2800 1800
 	1    0    0    -1  
