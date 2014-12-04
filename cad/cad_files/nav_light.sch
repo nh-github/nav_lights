@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:34:03 PM HST
+EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:36:01 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -46,6 +46,8 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
+	2300 2800 2500 2800
+Wire Wire Line
 	5500 5100 5700 5100
 Wire Wire Line
 	5700 5100 5700 5700
@@ -88,6 +90,17 @@ Wire Wire Line
 Wire Wire Line
 	4200 2800 6500 2800
 Connection ~ 4200 2800
+Wire Wire Line
+	2300 2600 2500 2600
+$Comp
+L CONN_2 Pp101
+U 1 1 547FD67C
+P 1950 2700
+F 0 "Pp101" V 1900 2700 40  0000 C CNN
+F 1 "CONN_2" V 2000 2700 40  0000 C CNN
+	1    1950 2700
+	-1   0    0    1   
+$EndComp
 $Sheet
 S 4500 4500 1000 1000
 U 53D0DCA3
@@ -121,13 +134,4 @@ F3 "~LOBAT" O R 7500 2600 60
 F4 "gnd" I L 6500 2800 60 
 F5 "Vbat" I L 6500 2600 60 
 $EndSheet
-$Comp
-L CONN_4 P?
-U 1 1 53D0DAAF
-P 1750 2750
-F 0 "P?" V 1700 2750 50  0000 C CNN
-F 1 "CONN_4" V 1800 2750 50  0000 C CNN
-	1    1750 2750
-	-1   0    0    1   
-$EndComp
 $EndSCHEMATC
