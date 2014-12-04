@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:36:52 PM HST
+EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:46:12 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -55,9 +55,7 @@ Wire Wire Line
 	3700 3600 4000 3600
 Connection ~ 4200 3400
 Wire Wire Line
-	3700 3400 4200 3400
-Wire Wire Line
-	4200 3400 4700 3400
+	3700 3400 4700 3400
 Connection ~ 5000 4800
 Wire Wire Line
 	6300 4450 6300 4800
@@ -70,15 +68,13 @@ Wire Wire Line
 Wire Wire Line
 	5800 3400 5300 3400
 Wire Wire Line
-	4000 4050 4300 4050
+	4300 4050 4000 4050
 Wire Wire Line
 	4300 4250 4200 4250
 Wire Wire Line
 	4300 3750 4200 3750
 Wire Wire Line
-	4200 4250 4200 3750
-Wire Wire Line
-	4200 3750 4200 3400
+	4200 4250 4200 3400
 Connection ~ 4200 3750
 Wire Wire Line
 	5700 3850 6600 3850
@@ -91,13 +87,7 @@ Wire Wire Line
 Wire Wire Line
 	6600 4450 6600 4800
 Wire Wire Line
-	6600 4800 6300 4800
-Wire Wire Line
-	6300 4800 5000 4800
-Wire Wire Line
-	5000 4800 4000 4800
-Wire Wire Line
-	4000 4800 3800 4800
+	6600 4800 3800 4800
 Connection ~ 6300 4800
 Wire Wire Line
 	3700 3500 3800 3500
@@ -105,9 +95,7 @@ Wire Wire Line
 	3800 3500 3800 4800
 Connection ~ 4000 4800
 Wire Wire Line
-	4000 3600 4000 4050
-Wire Wire Line
-	4000 4050 4000 4150
+	4000 3600 4000 4150
 Connection ~ 4000 4050
 Text HLabel 3700 3600 0    60   Input ~ 0
 CTRL
