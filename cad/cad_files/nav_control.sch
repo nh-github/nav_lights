@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 03 Dec 2014 05:46:12 PM HST
+EESchema Schematic File Version 2  date Sun 07 Dec 2014 02:35:16 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "4 dec 2014"
+Date "7 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 4900 5100 0    60   ~ 0
+A0 / A1 thermistor or similar for monitoring \nLED temperature (maybe battery too)
 Connection ~ 2200 1100
 Wire Wire Line
 	2200 800  2200 1300
@@ -248,7 +250,7 @@ U 1 1 547EB67E
 P 3000 5000
 F 0 "Uc101" H 3000 4900 50  0000 C CNN
 F 1 "ARDUINO_PRO_MINI" V 3100 5350 50  0000 C CNN
-F 2 "MODULE" H 3000 5000 50  0001 C CNN
+F 2 "DIP-24__600_ELL" H 3000 5000 50  0001 C CNN
 F 3 "DOCUMENTATION" H 3000 5000 50  0001 C CNN
 	1    3000 5000
 	1    0    0    -1  
@@ -270,6 +272,7 @@ U 1 1 547E9539
 P 2900 3450
 F 0 "Rc101" V 2980 3450 50  0000 C CNN
 F 1 "DNP" V 2900 3450 50  0000 C CNN
+F 2 "SM0805" H 2900 3450 60  0001 C CNN
 	1    2900 3450
 	1    0    0    -1  
 $EndComp
@@ -331,6 +334,7 @@ U 1 1 547C6270
 P 5600 1800
 F 0 "Rp303" V 5680 1800 50  0000 C CNN
 F 1 "DNP" V 5600 1800 50  0000 C CNN
+F 2 "SM0805" H 5600 1800 60  0001 C CNN
 	1    5600 1800
 	1    0    0    -1  
 $EndComp
@@ -342,6 +346,7 @@ U 1 1 546DDB52
 P 7050 2600
 F 0 "Kp301" V 7000 2600 50  0000 C CNN
 F 1 "CONN_3" V 7100 2600 40  0000 C CNN
+F 2 "PIN_ARRAY_3X1" H 7050 2600 60  0001 C CNN
 	1    7050 2600
 	1    0    0    -1  
 $EndComp
@@ -388,6 +393,7 @@ U 1 1 53D1B197
 P 4100 2250
 F 0 "Rp302" V 4180 2250 50  0000 C CNN
 F 1 "R" V 4100 2250 50  0000 C CNN
+F 2 "SM0805" H 4100 2250 60  0001 C CNN
 	1    4100 2250
 	1    0    0    -1  
 $EndComp
@@ -397,6 +403,7 @@ U 1 1 53D1B192
 P 3300 2250
 F 0 "Rp301" V 3380 2250 50  0000 C CNN
 F 1 "R" V 3300 2250 50  0000 C CNN
+F 2 "SM0805" H 3300 2250 60  0001 C CNN
 	1    3300 2250
 	1    0    0    -1  
 $EndComp
