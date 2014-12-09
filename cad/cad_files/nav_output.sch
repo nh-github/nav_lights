@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Dec 2014 02:35:16 AM HST
+EESchema Schematic File Version 2  date Tue 09 Dec 2014 01:12:04 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "LED Driver"
-Date "7 dec 2014"
+Date "9 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -51,13 +51,9 @@ Connection ~ 6300 4050
 Wire Wire Line
 	6600 4050 6600 4150
 Wire Wire Line
-	5700 4050 6300 4050
+	5700 4050 6600 4050
 Wire Wire Line
-	6300 4050 6600 4050
-Wire Wire Line
-	6300 4600 6300 4700
-Wire Wire Line
-	6300 4700 6300 4800
+	6300 4600 6300 4800
 Wire Wire Line
 	5700 4250 5900 4250
 Wire Wire Line
@@ -65,12 +61,10 @@ Wire Wire Line
 Wire Wire Line
 	5900 3750 6700 3750
 Wire Wire Line
-	3700 3600 4000 3600
+	4000 3600 3700 3600
 Connection ~ 4200 3400
 Wire Wire Line
-	3700 3400 4200 3400
-Wire Wire Line
-	4200 3400 4700 3400
+	3700 3400 4700 3400
 Connection ~ 5000 5300
 Wire Wire Line
 	6300 5200 6300 5300
@@ -83,13 +77,11 @@ Wire Wire Line
 Wire Wire Line
 	4300 4050 4000 4050
 Wire Wire Line
-	4300 4250 4200 4250
+	4200 4250 4300 4250
 Wire Wire Line
 	4300 3750 4200 3750
 Wire Wire Line
-	4200 4250 4200 3750
-Wire Wire Line
-	4200 3750 4200 3400
+	4200 3400 4200 4250
 Connection ~ 4200 3750
 Wire Wire Line
 	5700 3850 6900 3850
@@ -98,15 +90,9 @@ Wire Wire Line
 Wire Wire Line
 	4000 5300 4000 5150
 Wire Wire Line
-	6900 4950 6900 5300
+	6900 5300 6900 4950
 Wire Wire Line
-	6900 5300 6300 5300
-Wire Wire Line
-	6300 5300 5000 5300
-Wire Wire Line
-	5000 5300 4000 5300
-Wire Wire Line
-	4000 5300 3800 5300
+	6900 5300 3800 5300
 Connection ~ 6300 5300
 Wire Wire Line
 	3700 3500 3800 3500
@@ -114,9 +100,7 @@ Wire Wire Line
 	3800 3500 3800 5300
 Connection ~ 4000 5300
 Wire Wire Line
-	4000 3600 4000 4050
-Wire Wire Line
-	4000 4050 4000 4650
+	4000 4650 4000 3600
 Connection ~ 4000 4050
 Wire Wire Line
 	6300 4050 6300 4200

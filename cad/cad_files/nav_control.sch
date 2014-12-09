@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Dec 2014 02:35:16 AM HST
+EESchema Schematic File Version 2  date Tue 09 Dec 2014 01:12:04 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "7 dec 2014"
+Date "9 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,8 +45,22 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4900 5100 0    60   ~ 0
-A0 / A1 thermistor or similar for monitoring \nLED temperature (maybe battery too)
+Connection ~ 1100 5800
+Wire Wire Line
+	1400 5700 1400 5800
+Wire Wire Line
+	1400 5800 1100 5800
+Connection ~ 1100 4300
+Wire Wire Line
+	1100 4300 1400 4300
+Wire Wire Line
+	1400 4300 1400 4400
+Connection ~ 1400 5100
+Wire Wire Line
+	2200 5100 1400 5100
+Connection ~ 1100 5000
+Wire Wire Line
+	1100 5200 1100 4900
 Connection ~ 2200 1100
 Wire Wire Line
 	2200 800  2200 1300
@@ -61,7 +75,7 @@ Wire Wire Line
 	4600 2200 4500 2200
 Connection ~ 6600 2200
 Wire Wire Line
-	6600 2500 6600 2200
+	6600 2200 6600 2500
 Wire Wire Line
 	3800 4900 4000 4900
 Wire Wire Line
@@ -84,10 +98,10 @@ Wire Wire Line
 	2200 1100 2000 1100
 Connection ~ 4500 1000
 Wire Wire Line
-	5600 1000 5600 1550
+	5600 1550 5600 1000
 Connection ~ 4100 2600
 Wire Wire Line
-	3300 2600 4100 2600
+	4100 2600 3300 2600
 Wire Wire Line
 	3300 2600 3300 2500
 Wire Wire Line
@@ -122,7 +136,7 @@ Wire Wire Line
 	5600 2200 5600 2050
 Connection ~ 5600 2200
 Wire Wire Line
-	2000 1000 5600 1000
+	5600 1000 2000 1000
 Connection ~ 2300 1000
 Wire Wire Line
 	6400 2500 6400 2600
@@ -160,6 +174,73 @@ Wire Wire Line
 Wire Wire Line
 	3200 3800 3200 3700
 Connection ~ 2900 3800
+Wire Wire Line
+	1100 5000 2200 5000
+Wire Wire Line
+	1400 4900 1400 5200
+Wire Wire Line
+	1100 4200 1100 4400
+Wire Wire Line
+	1100 5900 1100 5700
+$Comp
+L THERMISTOR THc101
+U 1 1 54868248
+P 1100 5450
+F 0 "THc101" V 1200 5500 50  0000 C CNN
+F 1 "10k" V 1000 5450 50  0000 C CNN
+	1    1100 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L R Rc102
+U 1 1 54868245
+P 1100 4650
+F 0 "Rc102" V 1180 4650 50  0000 C CNN
+F 1 "10k" V 1100 4650 50  0000 C CNN
+F 2 "SM0805" H 1100 4650 60  0001 C CNN
+	1    1100 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 54868229
+P 1100 5900
+F 0 "#PWR?" H 1100 5900 30  0001 C CNN
+F 1 "GND" H 1100 5830 30  0001 C CNN
+	1    1100 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 54868223
+P 1100 4200
+F 0 "#PWR?" H 1100 4290 20  0001 C CNN
+F 1 "+5V" H 1100 4290 30  0000 C CNN
+	1    1100 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L THERMISTOR THc102
+U 1 1 548681F5
+P 1400 5450
+F 0 "THc102" V 1500 5500 50  0000 C CNN
+F 1 "10k" V 1300 5450 50  0000 C CNN
+F 2 "R4-LARGE_PADS" H 1400 5450 60  0001 C CNN
+	1    1400 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L R Rc103
+U 1 1 548681C7
+P 1400 4650
+F 0 "Rc103" V 1480 4650 50  0000 C CNN
+F 1 "10k" V 1400 4650 50  0000 C CNN
+F 2 "R4-LARGE_PADS" H 1400 4650 60  0001 C CNN
+	1    1400 4650
+	1    0    0    -1  
+$EndComp
+Text Notes 4900 5100 0    60   ~ 0
+A0 / A1 thermistor or similar for monitoring \nLED temperature (maybe battery too)
 $Comp
 L PWR_FLAG #FLG01
 U 1 1 547FD8F3
@@ -208,8 +289,6 @@ NoConn ~ 2200 5500
 NoConn ~ 2200 5400
 NoConn ~ 2200 5300
 NoConn ~ 2200 5200
-NoConn ~ 2200 5100
-NoConn ~ 2200 5000
 NoConn ~ 2200 4800
 NoConn ~ 2200 4700
 NoConn ~ 2200 4600
@@ -272,7 +351,7 @@ U 1 1 547E9539
 P 2900 3450
 F 0 "Rc101" V 2980 3450 50  0000 C CNN
 F 1 "DNP" V 2900 3450 50  0000 C CNN
-F 2 "SM0805" H 2900 3450 60  0001 C CNN
+F 2 "R4-LARGE_PADS" H 2900 3450 60  0001 C CNN
 	1    2900 3450
 	1    0    0    -1  
 $EndComp
