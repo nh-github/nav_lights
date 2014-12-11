@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 11 Dec 2014 12:57:18 AM HST
+EESchema Schematic File Version 2  date Thu 11 Dec 2014 02:09:55 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -98,7 +98,7 @@ U 1 1 547FD67C
 P 1950 2700
 F 0 "Pp101" V 1900 2700 40  0000 C CNN
 F 1 "CONN_2" V 2000 2700 40  0000 C CNN
-F 2 "PIN_ARRAY_2X1" H 1950 2700 60  0001 C CNN
+F 2 "PIN_ARRAY_2X1" H 1950 2900 60  0000 C CNN
 	1    1950 2700
 	-1   0    0    1   
 $EndComp
