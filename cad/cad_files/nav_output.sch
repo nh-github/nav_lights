@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 11 Dec 2014 02:09:55 AM HST
+EESchema Schematic File Version 2  date Tue 16 Dec 2014 01:21:59 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "LED Driver"
-Date "11 dec 2014"
+Date "16 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 7900 4700 0    60   ~ 0
+p2_LED_mid
+Text Label 6400 4050 0    60   ~ 0
+p2_LED_out
+Text Label 6300 4400 1    60   ~ 0
+p2_cap
+Text Label 5500 3400 0    60   ~ 0
+p2_sw
 Text Notes 8500 5000 0    60   ~ 0
 <= use only one of these alternates
 Wire Wire Line
@@ -126,7 +134,7 @@ U 1 1 54897A04
 P 8100 5000
 F 0 "Dp204" H 8100 5100 50  0000 C CNN
 F 1 "LED" H 8100 4900 50  0000 C CNN
-F 2 "REBEL" H 8100 5200 60  0000 C CNN
+F 2 "LED-rebel_sketch" H 8100 5200 60  0000 C CNN
 F 4 "XPEBRD-L1-0000-00801CT-ND" H 8100 5000 60  0001 C CNN "digikey"
 	1    8100 5000
 	0    1    1    0   
