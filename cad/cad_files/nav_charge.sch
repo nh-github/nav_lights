@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 23 Dec 2014 11:38:44 PM HST
+EESchema Schematic File Version 2  date Wed 24 Dec 2014 12:13:48 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,7 +45,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 8150 950  0    60   ~ 0
+$Comp
+L LDO Up101
+U 1 1 549A8F09
+P 4500 2100
+F 0 "Up101" H 4500 2250 60  0000 C CNN
+F 1 "LDO" H 4700 1950 60  0000 C CNN
+F 2 "TO220_LDO" H 4500 2350 60  0000 C CNN
+	1    4500 2100
+	1    0    0    -1  
+$EndComp
+Text Notes 7500 1500 0    60   ~ 0
 Stack:\n0.3 -- 0.6 V regulator\n1.2 V regulator feedback\n1.2-1.5 V battery\n1.2-1.5 V battery\n4.8 V  <- sum \n\nless than 5V input
 Text Notes 5300 2800 0    60   ~ 0
 Idea is connect to \nbattery, not reg
@@ -53,9 +63,9 @@ Wire Wire Line
 	6100 2700 5200 2700
 Connection ~ 6100 2100
 Wire Wire Line
-	6100 2100 6100 2700
+	6100 2700 6100 2100
 Wire Wire Line
-	6500 2100 5750 2100
+	5750 2100 6500 2100
 Wire Wire Line
 	3500 3550 3500 3450
 Connection ~ 3500 2100
@@ -72,11 +82,11 @@ Wire Wire Line
 	6700 2400 6500 2400
 Wire Wire Line
 	6500 4300 6500 4000
-Connection ~ 6500 3200
+Connection ~ 6500 3300
 Wire Wire Line
-	5900 3200 6500 3200
+	6600 3300 6500 3300
 Wire Wire Line
-	6500 2500 6500 2100
+	6500 2100 6500 2500
 Wire Wire Line
 	6500 3100 6500 3400
 Wire Wire Line
@@ -114,29 +124,19 @@ Text Label 6500 4200 2    60   ~ 0
 V_bat_neg
 Text Notes 5000 1500 0    60   ~ 0
 Voltage across R -> 1.2 Volt\n1 ohm -> approx. 1.2 Amp (0.24 W dissipation)\n6 ohm -> approx. 0.2 Amp (0.12 W ..)\n(1.2 V / Rsense) -> charge current
-$Comp
-L 7805 Up101
-U 1 1 549A8263
-P 4500 2150
-F 0 "Up101" H 4650 1954 60  0000 C CNN
-F 1 "7805" H 4500 2350 60  0000 C CNN
-F 2 "TO220" H 4500 2450 60  0000 C CNN
-	1    4500 2150
-	1    0    0    -1  
-$EndComp
 Text Notes 7000 3000 0    60   ~ 0
 Mount holders w/ \n#2 screws (0.098" dia holes)\n
 Text HLabel 5300 3650 2    60   Output ~ 0
 charge_status
-Text Label 6400 3200 2    60   ~ 0
+Text Label 6600 3300 0    60   ~ 0
 V_bat_mid
 Text Label 5200 3550 2    60   ~ 0
 thm1
 $Comp
-L GND #PWR08
+L GND #PWR09
 U 1 1 53DB304B
 P 6500 4300
-F 0 "#PWR08" H 6500 4300 30  0001 C CNN
+F 0 "#PWR09" H 6500 4300 30  0001 C CNN
 F 1 "GND" H 6500 4230 30  0001 C CNN
 	1    6500 4300
 	1    0    0    -1  
@@ -182,10 +182,10 @@ F 2 "SM1206" H 3500 2300 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR09
+L GND #PWR010
 U 1 1 53DA0DD7
 P 2700 2500
-F 0 "#PWR09" H 2700 2500 30  0001 C CNN
+F 0 "#PWR010" H 2700 2500 30  0001 C CNN
 F 1 "GND" H 2700 2430 30  0001 C CNN
 	1    2700 2500
 	1    0    0    -1  
