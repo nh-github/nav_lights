@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 24 Dec 2014 03:57:46 AM HST
+EESchema Schematic File Version 2  date Wed 24 Dec 2014 07:01:58 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,20 +45,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L LDO Up101
-U 1 1 549A8F09
-P 4500 2100
-F 0 "Up101" H 4500 2250 60  0000 C CNN
-F 1 "LDO" H 4700 1950 60  0000 C CNN
-F 2 "TO220_LDO" H 4500 2350 60  0000 C CNN
-	1    4500 2100
-	1    0    0    -1  
-$EndComp
-Text Notes 7500 1500 0    60   ~ 0
-Stack:\n0.3 -- 0.6 V regulator\n1.2 V regulator feedback\n1.2-1.5 V battery\n1.2-1.5 V battery\n4.8 V  <- sum \n\nless than 5V input
-Text Notes 5300 2800 0    60   ~ 0
-Idea is connect to \nbattery, not reg
 Wire Wire Line
 	6100 2700 5200 2700
 Connection ~ 6100 2100
@@ -112,6 +98,21 @@ Wire Wire Line
 	5900 2500 4500 2500
 Wire Wire Line
 	4500 2500 4500 2400
+$Comp
+L LDO Up101
+U 1 1 549A8F09
+P 4500 2100
+F 0 "Up101" H 4500 2250 60  0000 C CNN
+F 1 "LDO 1.2V" H 4700 1950 60  0000 C CNN
+F 2 "TO220_LDO" H 4500 2350 60  0000 C CNN
+F 4 "MCP1827S-1202E/AB-ND" H 4300 2450 60  0000 C CNN "digikey"
+	1    4500 2100
+	1    0    0    -1  
+$EndComp
+Text Notes 7500 1500 0    60   ~ 0
+Stack:\n0.3 -- 0.6 V regulator\n1.2 V regulator feedback\n1.2-1.5 V battery\n1.2-1.5 V battery\n4.8 V  <- sum \n\nless than 5V input
+Text Notes 5300 2800 0    60   ~ 0
+Idea is connect to \nbattery, not reg
 Text Label 3500 2800 0    60   ~ 0
 V_p1
 Text Label 5000 2100 0    60   ~ 0
@@ -122,8 +123,8 @@ Text Label 3500 3550 3    60   ~ 0
 V_bat_neg
 Text Label 6500 4200 2    60   ~ 0
 V_bat_neg
-Text Notes 5000 1500 0    60   ~ 0
-Voltage across R -> 1.2 Volt\n1 ohm -> approx. 1.2 Amp (0.24 W dissipation)\n6 ohm -> approx. 0.2 Amp (0.12 W ..)\n(1.2 V / Rsense) -> charge current
+Text Notes 5000 1400 0    60   ~ 0
+Voltage across R -> 1.2 Volt\n1 ohm -> approx. 1.2 Amp \n6 ohm -> approx. 0.2 Amp (0.24 W dissipation)\n12 ohm -> approx. 0.1 Amp (0.12 W ..)\n(1.2 V / Rsense) -> charge current
 Text Notes 7000 3000 0    60   ~ 0
 Mount holders w/ \n#2 screws (0.098" dia holes)\n
 Text HLabel 5300 3650 2    60   Output ~ 0
@@ -148,6 +149,7 @@ P 6500 3700
 F 0 "BTp102" H 6500 3900 50  0000 C CNN
 F 1 "BATTERY" H 6500 3510 50  0000 C CNN
 F 2 "PIN_ARRAY_2X1" H 6500 4000 60  0000 C CNN
+F 4 "2461K-ND" H 6500 4100 60  0000 C CNN "digikey"
 	1    6500 3700
 	0    1    1    0   
 $EndComp
@@ -158,6 +160,7 @@ P 6500 2800
 F 0 "BTp101" H 6500 3000 50  0000 C CNN
 F 1 "BATTERY" H 6500 2610 50  0000 C CNN
 F 2 "PIN_ARRAY_2X1" H 6500 3100 60  0000 C CNN
+F 4 "2461K-ND" H 6500 3200 60  0000 C CNN "digikey"
 	1    6500 2800
 	0    1    1    0   
 $EndComp
@@ -168,6 +171,7 @@ P 3500 3200
 F 0 "Rp102" V 3580 3200 50  0000 C CNN
 F 1 "270" V 3500 3200 50  0000 C CNN
 F 2 "SM1206" V 3700 3200 60  0000 C CNN
+F 4 "1276-5685-1-ND" V 3800 3200 60  0000 C CNN "digikey"
 	1    3500 3200
 	1    0    0    -1  
 $EndComp
@@ -178,6 +182,7 @@ P 3500 2500
 F 0 "Dp101" H 3500 2600 50  0000 C CNN
 F 1 "LED" H 3500 2400 50  0000 C CNN
 F 2 "SM1206" H 3500 2300 60  0000 C CNN
+F 4 "732-4994-1-ND" H 3500 2200 60  0000 C CNN "digikey"
 	1    3500 2500
 	0    1    1    0   
 $EndComp
@@ -195,8 +200,9 @@ L R Rp101
 U 1 1 53DA0CB2
 P 5500 2100
 F 0 "Rp101" V 5580 2100 50  0000 C CNN
-F 1 "330" V 5500 2100 50  0000 C CNN
+F 1 "12" V 5500 2100 50  0000 C CNN
 F 2 "SM1206" V 5650 2100 60  0000 C CNN
+F 4 "P12.0FCT-ND" V 5750 2050 60  0000 C CNN "digikey"
 	1    5500 2100
 	0    -1   -1   0   
 $EndComp
@@ -211,6 +217,7 @@ P 5200 3200
 F 0 "Rp103" V 5280 3200 50  0000 C CNN
 F 1 "10k" V 5200 3200 50  0000 C CNN
 F 2 "SM1206" V 5350 3200 60  0000 C CNN
+F 4 "1276-5742-1-ND" V 5450 3200 60  0000 C CNN "digikey"
 	1    5200 3200
 	-1   0    0    1   
 $EndComp
@@ -221,6 +228,7 @@ P 5200 4300
 F 0 "THp101" V 5300 4350 50  0000 C CNN
 F 1 "103AT-2" V 5100 4300 50  0000 C CNN
 F 2 "PIN_ARRAY_2X1" V 5400 4300 60  0000 C CNN
+F 4 "615-1054-ND" V 5500 4300 60  0000 C CNN "digikey"
 	1    5200 4300
 	1    0    0    -1  
 $EndComp

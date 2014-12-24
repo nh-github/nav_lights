@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 24 Dec 2014 03:57:46 AM HST
+EESchema Schematic File Version 2  date Wed 24 Dec 2014 07:01:58 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,46 +45,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L MECH MECH104
-U 1 1 54942F24
-P 8450 3450
-F 0 "MECH104" H 8450 3400 60  0000 C CNN
-F 1 "MECH" H 8450 3500 60  0000 C CNN
-F 2 "mech_hole__2" H 8450 3300 60  0000 C CNN
-	1    8450 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L MECH MECH103
-U 1 1 54942F1E
-P 8450 3150
-F 0 "MECH103" H 8450 3100 60  0000 C CNN
-F 1 "MECH" H 8450 3200 60  0000 C CNN
-F 2 "mech_hole__2" H 8450 3000 60  0000 C CNN
-	1    8450 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L MECH MECH102
-U 1 1 54942F19
-P 8450 2850
-F 0 "MECH102" H 8450 2800 60  0000 C CNN
-F 1 "MECH" H 8450 2900 60  0000 C CNN
-F 2 "mech_hole__2" H 8450 2700 60  0000 C CNN
-	1    8450 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L MECH MECH101
-U 1 1 54942F11
-P 8450 2550
-F 0 "MECH101" H 8450 2500 60  0000 C CNN
-F 1 "MECH" H 8450 2600 60  0000 C CNN
-F 2 "mech_hole__2" H 8450 2400 60  0000 C CNN
-	1    8450 2550
-	1    0    0    -1  
-$EndComp
+Connection ~ 8900 3150
+Wire Wire Line
+	8900 2550 8900 3450
+Wire Wire Line
+	8900 3450 8750 3450
+Connection ~ 8900 2550
+Wire Wire Line
+	8900 2850 8750 2850
 Wire Wire Line
 	2300 2800 2500 2800
 Wire Wire Line
@@ -132,6 +100,55 @@ Wire Wire Line
 Connection ~ 4200 2800
 Wire Wire Line
 	2300 2600 2500 2600
+Wire Wire Line
+	9000 2550 8750 2550
+Wire Wire Line
+	8900 3150 8750 3150
+Connection ~ 8900 2850
+Text Label 9000 2550 0    60   ~ 0
+bat_neg
+Text Label 4400 2800 0    60   ~ 0
+bat_neg
+$Comp
+L MECH MECH104
+U 1 1 54942F24
+P 8450 3450
+F 0 "MECH104" H 8450 3400 60  0000 C CNN
+F 1 "MECH" H 8450 3500 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 3300 60  0000 C CNN
+	1    8450 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH103
+U 1 1 54942F1E
+P 8450 3150
+F 0 "MECH103" H 8450 3100 60  0000 C CNN
+F 1 "MECH" H 8450 3200 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 3000 60  0000 C CNN
+	1    8450 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH102
+U 1 1 54942F19
+P 8450 2850
+F 0 "MECH102" H 8450 2800 60  0000 C CNN
+F 1 "MECH" H 8450 2900 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 2700 60  0000 C CNN
+	1    8450 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH101
+U 1 1 54942F11
+P 8450 2550
+F 0 "MECH101" H 8450 2500 60  0000 C CNN
+F 1 "MECH" H 8450 2600 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 2400 60  0000 C CNN
+	1    8450 2550
+	1    0    0    -1  
+$EndComp
 $Comp
 L CONN_2 Pp101
 U 1 1 547FD67C

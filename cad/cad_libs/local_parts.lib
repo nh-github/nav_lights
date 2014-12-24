@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Wed 24 Dec 2014 12:13:34 AM HST
+EESchema-LIBRARY Version 2.3  Date: Wed 24 Dec 2014 04:36:29 AM HST
 #encoding utf-8
 #
 # Arduino_Pro_Mini
@@ -123,10 +123,11 @@ ENDDEF
 # MECH
 #
 DEF MECH MECH 0 40 Y Y 1 F N
-F0 "MECH" 0 -50 60 H V C CNN
-F1 "MECH" 0 50 60 H V C CNN
+F0 "MECH" -50 -50 60 H V C CNN
+F1 "MECH" -50 50 60 H V C CNN
 DRAW
 S -200 100 200 -100 0 1 0 N
+X bolt 1 300 0 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
