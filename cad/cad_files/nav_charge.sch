@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 24 Dec 2014 12:13:48 AM HST
+EESchema Schematic File Version 2  date Wed 24 Dec 2014 12:18:47 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -133,10 +133,10 @@ V_bat_mid
 Text Label 5200 3550 2    60   ~ 0
 thm1
 $Comp
-L GND #PWR09
+L GND #PWR08
 U 1 1 53DB304B
 P 6500 4300
-F 0 "#PWR09" H 6500 4300 30  0001 C CNN
+F 0 "#PWR08" H 6500 4300 30  0001 C CNN
 F 1 "GND" H 6500 4230 30  0001 C CNN
 	1    6500 4300
 	1    0    0    -1  
@@ -182,10 +182,10 @@ F 2 "SM1206" H 3500 2300 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR010
+L GND #PWR09
 U 1 1 53DA0DD7
 P 2700 2500
-F 0 "#PWR010" H 2700 2500 30  0001 C CNN
+F 0 "#PWR09" H 2700 2500 30  0001 C CNN
 F 1 "GND" H 2700 2430 30  0001 C CNN
 	1    2700 2500
 	1    0    0    -1  

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 24 Dec 2014 12:13:48 AM HST
+EESchema Schematic File Version 2  date Wed 24 Dec 2014 12:18:47 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -53,12 +53,10 @@ Text Label 6300 4400 1    60   ~ 0
 p2_cap
 Text Label 5500 3400 0    60   ~ 0
 p2_sw
-Text Notes 8500 5000 0    60   ~ 0
+Text Notes 7900 5000 0    60   ~ 0
 <= use only one of these alternates
 Wire Wire Line
-	8100 4800 8100 4700
-Wire Wire Line
-	8100 4700 6900 4700
+	7900 4700 6900 4700
 Connection ~ 6900 5300
 Wire Wire Line
 	7500 5300 7500 5200
@@ -74,12 +72,12 @@ Wire Wire Line
 	4000 4650 4000 3600
 Connection ~ 4000 5300
 Wire Wire Line
-	3800 3500 3800 5300
+	3800 5300 3800 3500
 Wire Wire Line
 	3800 3500 3700 3500
 Connection ~ 6300 5300
 Wire Wire Line
-	6300 4950 6300 5300
+	6300 5300 6300 4950
 Wire Wire Line
 	4000 5300 4000 5150
 Wire Wire Line
@@ -88,7 +86,7 @@ Wire Wire Line
 	6300 3850 5700 3850
 Connection ~ 4200 3750
 Wire Wire Line
-	4200 3400 4200 4250
+	4200 4250 4200 3400
 Wire Wire Line
 	4300 3750 4200 3750
 Wire Wire Line
@@ -102,7 +100,7 @@ Wire Wire Line
 Wire Wire Line
 	5800 3750 5700 3750
 Wire Wire Line
-	6900 5300 6900 5200
+	6900 5200 6900 5300
 Connection ~ 5000 5300
 Wire Wire Line
 	3700 3400 4700 3400
@@ -124,21 +122,7 @@ Wire Wire Line
 Connection ~ 6900 4050
 Connection ~ 7500 4700
 Wire Wire Line
-	8100 5200 8100 5300
-Wire Wire Line
-	8100 5300 3800 5300
-Connection ~ 7500 5300
-$Comp
-L LED Dp204
-U 1 1 54897A04
-P 8100 5000
-F 0 "Dp204" H 8100 5100 50  0000 C CNN
-F 1 "LED" H 8100 4900 50  0000 C CNN
-F 2 "LED-rebel_sketch" H 8100 5200 60  0000 C CNN
-F 4 "XPEBRD-L1-0000-00801CT-ND" H 8100 5000 60  0001 C CNN "digikey"
-	1    8100 5000
-	0    1    1    0   
-$EndComp
+	7500 5300 3800 5300
 $Comp
 L LED Dp203
 U 1 1 54897986
