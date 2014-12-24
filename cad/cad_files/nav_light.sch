@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Dec 2014 01:21:59 AM HST
+EESchema Schematic File Version 2  date Tue 23 Dec 2014 10:08:36 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title ""
-Date "16 dec 2014"
+Date "24 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,46 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L MECH MECH104
+U 1 1 54942F24
+P 8450 3450
+F 0 "MECH104" H 8450 3400 60  0000 C CNN
+F 1 "MECH" H 8450 3500 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 3300 60  0000 C CNN
+	1    8450 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH103
+U 1 1 54942F1E
+P 8450 3150
+F 0 "MECH103" H 8450 3100 60  0000 C CNN
+F 1 "MECH" H 8450 3200 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 3000 60  0000 C CNN
+	1    8450 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH102
+U 1 1 54942F19
+P 8450 2850
+F 0 "MECH102" H 8450 2800 60  0000 C CNN
+F 1 "MECH" H 8450 2900 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 2700 60  0000 C CNN
+	1    8450 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH101
+U 1 1 54942F11
+P 8450 2550
+F 0 "MECH101" H 8450 2500 60  0000 C CNN
+F 1 "MECH" H 8450 2600 60  0000 C CNN
+F 2 "mech_hole__2" H 8450 2400 60  0000 C CNN
+	1    8450 2550
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	2300 2800 2500 2800
 Wire Wire Line
