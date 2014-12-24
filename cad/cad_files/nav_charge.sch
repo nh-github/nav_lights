@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Dec 2014 01:21:59 AM HST
+EESchema Schematic File Version 2  date Tue 23 Dec 2014 10:08:36 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "Battery Charger"
-Date "16 dec 2014"
+Date "24 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -55,9 +55,9 @@ Wire Wire Line
 Wire Wire Line
 	6000 3800 5900 3800
 Wire Wire Line
-	4200 4100 4200 4200
+	4200 4200 4200 4100
 Wire Wire Line
-	1500 1500 5900 1500
+	5900 1500 1500 1500
 Connection ~ 4200 5100
 Wire Wire Line
 	4200 5100 5200 5100
@@ -70,7 +70,7 @@ Wire Wire Line
 	4200 4700 4200 5300
 Connection ~ 1500 2000
 Wire Wire Line
-	4300 1800 4300 2000
+	4300 2000 4300 1800
 Wire Wire Line
 	4500 3100 4500 4500
 Connection ~ 7700 3500
@@ -99,7 +99,7 @@ Wire Wire Line
 	7700 3600 7700 3300
 Connection ~ 5900 2300
 Wire Wire Line
-	5400 2300 5900 2300
+	5900 2300 5400 2300
 Wire Wire Line
 	5400 2300 5400 2400
 Wire Wire Line
@@ -126,7 +126,7 @@ Wire Wire Line
 	3300 2200 3300 2000
 Connection ~ 2500 2000
 Wire Wire Line
-	2500 1800 2500 2000
+	2500 2000 2500 1800
 Wire Wire Line
 	2500 1800 2700 1800
 Wire Wire Line
@@ -155,7 +155,7 @@ Wire Wire Line
 Wire Wire Line
 	6200 3100 6200 3900
 Wire Wire Line
-	5900 2400 5900 1500
+	5900 1500 5900 2400
 Wire Wire Line
 	5900 3500 5900 3900
 Wire Wire Line
@@ -172,7 +172,7 @@ Wire Wire Line
 Wire Wire Line
 	5100 4700 5200 4700
 Wire Wire Line
-	7700 2000 7700 2900
+	7700 2900 7700 2000
 Connection ~ 7700 2700
 Wire Wire Line
 	7700 4200 7700 4500
@@ -187,9 +187,9 @@ Wire Wire Line
 Wire Wire Line
 	5800 5700 5800 5900
 Wire Wire Line
-	5800 6500 5800 6400
+	5800 6400 5800 6500
 Wire Wire Line
-	7700 6500 5800 6500
+	5800 6500 7700 6500
 Connection ~ 6000 6500
 Wire Wire Line
 	6700 5100 6700 6500
@@ -200,7 +200,7 @@ Wire Wire Line
 	7700 5200 7900 5200
 Connection ~ 7700 5200
 Wire Wire Line
-	4200 2000 7700 2000
+	7700 2000 4200 2000
 Connection ~ 4300 2000
 Wire Wire Line
 	2200 3100 1500 3100
@@ -214,9 +214,9 @@ Connection ~ 4200 4900
 Wire Wire Line
 	2700 2000 900  2000
 Wire Wire Line
-	1500 4100 4200 4100
+	4200 4100 1500 4100
 Wire Wire Line
-	1500 1500 1500 4100
+	1500 4100 1500 1500
 Connection ~ 1500 3100
 Wire Wire Line
 	5400 3600 4900 3600
