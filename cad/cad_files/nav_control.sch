@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 24 Dec 2014 07:52:56 AM HST
+EESchema Schematic File Version 2  date Wed 24 Dec 2014 08:27:14 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -316,6 +316,7 @@ P 5250 2400
 F 0 "Up301" H 5250 2300 60  0000 C CNN
 F 1 "FPF2100" H 5250 2500 60  0000 C CNN
 F 2 "SOT23-5" H 5250 2000 60  0000 C CNN
+F 4 "FPF2103CT-ND" H 5250 2400 60  0000 C CNN "digikey"
 	1    5250 2400
 	1    0    0    -1  
 $EndComp
