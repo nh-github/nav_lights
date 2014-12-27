@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 27 Dec 2014 01:12:34 AM HST
+EESchema Schematic File Version 2  date Sat 27 Dec 2014 01:34:47 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -226,7 +226,7 @@ U 1 1 548681F5
 P 1400 5450
 F 0 "THc102" V 1500 5500 50  0000 C CNN
 F 1 "10k" V 1300 5450 50  0000 C CNN
-F 2 "R4-LARGE_PADS" V 1600 5400 60  0000 C CNN
+F 2 "R3-LARGE_PADS" V 1600 5400 60  0000 C CNN
 F 4 "615-1054-ND" V 1700 5450 60  0000 C CNN "digikey"
 	1    1400 5450
 	1    0    0    -1  
