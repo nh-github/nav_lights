@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 24 Dec 2014 08:27:14 AM HST
+EESchema Schematic File Version 2  date Sat 27 Dec 2014 01:12:34 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "24 dec 2014"
+Date "27 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -237,7 +237,7 @@ U 1 1 548681C7
 P 1400 4650
 F 0 "Rc103" V 1480 4650 50  0000 C CNN
 F 1 "10k" V 1400 4650 50  0000 C CNN
-F 2 "R4-LARGE_PADS" V 1600 4800 60  0000 C CNN
+F 2 "PIN_ARRAY_2X1" V 1600 4800 60  0000 C CNN
 F 4 "A105970CT-ND" V 1700 4800 60  0000 C CNN "digikey"
 	1    1400 4650
 	1    0    0    -1  
