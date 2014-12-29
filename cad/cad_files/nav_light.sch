@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 01:53:40 AM HST
+EESchema Schematic File Version 2  date Mon 29 Dec 2014 02:15:58 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,6 +45,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 8750 5250
+$Comp
+L MECH MECH8
+U 1 1 54A145DD
+P 8450 5250
+F 0 "MECH8" H 8450 5200 60  0000 C CNN
+F 1 "MECH" H 8450 5300 60  0000 C CNN
+F 2 "logo-OSHW_3mm" H 8450 5100 60  0000 C CNN
+	1    8450 5250
+	1    0    0    -1  
+$EndComp
 NoConn ~ 8750 4650
 $Comp
 L MECH MECH7

@@ -1,11 +1,10 @@
-PCBNEW-LibModule-V1  Wed 24 Dec 2014 12:56:42 AM HST
+PCBNEW-LibModule-V1  Mon 29 Dec 2014 02:18:54 AM HST
 # encoding utf-8
 $INDEX
 ASMT
 DO-214AA
 DO-214AB
 DO-216AA
-fiducial
 LED-rebel_sketch
 SLF7045
 SOIC16_N
@@ -14,6 +13,7 @@ SOIC_8n
 SOT89
 TO220_LDO
 XP-E2
+fiducial
 keystone_2460
 mech_hole_M3
 mech_hole__2
@@ -1304,17 +1304,16 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  TO220_LDO
 $MODULE mech_hole__2
-Po 0 0 0 15 549A9BD3 00000000 ~~
+Po 0 0 0 15 54A146A4 00000000 ~~
 Li mech_hole__2
 Cd mounting hole for #2 screw
 Kw mech, mount, hole
 Sc 00000000
-AR 
+AR mech_hole__2
 Op 0 0 0
-T0 0 -500 300 300 0 40 N V 21 N "mech_hole_#2"
-T1 0 500 300 300 0 40 N V 21 N "VAL**"
+T0 0 -500 300 300 0 40 N I 21 N "mech_hole_#2"
+T1 0 500 300 300 0 40 N I 21 N "VAL**"
 DC 0 0 984 0 150 21
-DC 0 0 984 0 150 20
 $PAD
 Sh "1" C 1800 1800 0 0 0
 Dr 900 0 0
