@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 02:23:30 AM HST
+EESchema Schematic File Version 2  date Mon 29 Dec 2014 03:44:31 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -59,7 +59,7 @@ Wire Wire Line
 	7900 4700 6900 4700
 Connection ~ 6900 5300
 Wire Wire Line
-	7500 5300 7500 5200
+	7500 5200 7500 5300
 Connection ~ 6900 4700
 Wire Wire Line
 	7500 4650 7500 4800
@@ -72,7 +72,7 @@ Wire Wire Line
 	4000 4650 4000 3600
 Connection ~ 4000 5300
 Wire Wire Line
-	3800 5300 3800 3500
+	3800 3500 3800 5300
 Wire Wire Line
 	3800 3500 3700 3500
 Connection ~ 6300 5300
@@ -86,7 +86,7 @@ Wire Wire Line
 	6300 3850 5700 3850
 Connection ~ 4200 3750
 Wire Wire Line
-	4200 4250 4200 3400
+	4200 3400 4200 4250
 Wire Wire Line
 	4300 3750 4200 3750
 Wire Wire Line
@@ -122,7 +122,7 @@ Wire Wire Line
 Connection ~ 6900 4050
 Connection ~ 7500 4700
 Wire Wire Line
-	7500 5300 3800 5300
+	3800 5300 7500 5300
 $Comp
 L LED Dp203
 U 1 1 54897986

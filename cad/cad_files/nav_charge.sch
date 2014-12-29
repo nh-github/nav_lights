@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 02:23:30 AM HST
+EESchema Schematic File Version 2  date Mon 29 Dec 2014 03:44:31 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -46,17 +46,20 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
+	4200 3400 4200 4050
+Text Label 4200 2800 0    60   ~ 0
+V_fb
+Wire Wire Line
 	6100 2700 5200 2700
 Connection ~ 6100 2100
 Wire Wire Line
-	6100 2700 6100 2100
+	6100 2100 6100 2700
 Wire Wire Line
-	5750 2100 6500 2100
+	6500 2100 5750 2100
 Wire Wire Line
-	3500 3550 3500 3450
-Connection ~ 3500 2100
+	4200 4650 4200 4550
 Wire Wire Line
-	3500 2300 3500 2100
+	4200 3000 4200 2800
 Wire Wire Line
 	5200 2700 5200 2950
 Wire Wire Line
@@ -72,7 +75,7 @@ Connection ~ 6500 3300
 Wire Wire Line
 	6600 3300 6500 3300
 Wire Wire Line
-	6500 2100 6500 2500
+	6500 2500 6500 2100
 Wire Wire Line
 	6500 3100 6500 3400
 Wire Wire Line
@@ -87,8 +90,6 @@ Wire Wire Line
 Connection ~ 5200 3650
 Wire Wire Line
 	4100 2100 2500 2100
-Wire Wire Line
-	3500 2700 3500 2950
 Wire Wire Line
 	4900 2100 5250 2100
 Wire Wire Line
@@ -113,13 +114,13 @@ Text Notes 7500 1500 0    60   ~ 0
 Stack:\n0.3 -- 0.6 V regulator\n1.2 V regulator feedback\n1.2-1.5 V battery\n1.2-1.5 V battery\n4.8 V  <- sum \n\nless than 5V input
 Text Notes 5300 2800 0    60   ~ 0
 Idea is connect to \nbattery, not reg
-Text Label 3500 2800 0    60   ~ 0
+Text Label 4200 3500 0    60   ~ 0
 V_p1
 Text Label 5000 2100 0    60   ~ 0
 V_fb
 Text Label 5200 4750 3    60   ~ 0
 V_bat_neg
-Text Label 3500 3550 3    60   ~ 0
+Text Label 4200 4650 3    60   ~ 0
 V_bat_neg
 Text Label 6500 4200 2    60   ~ 0
 V_bat_neg
@@ -167,23 +168,23 @@ $EndComp
 $Comp
 L R Rp102
 U 1 1 53DA2133
-P 3500 3200
-F 0 "Rp102" V 3580 3200 50  0000 C CNN
-F 1 "270" V 3500 3200 50  0000 C CNN
-F 2 "SM1206" V 3700 3200 60  0000 C CNN
-F 4 "1276-5685-1-ND" V 3800 3200 60  0000 C CNN "digikey"
-	1    3500 3200
+P 4200 4300
+F 0 "Rp102" V 4280 4300 50  0000 C CNN
+F 1 "270" V 4200 4300 50  0000 C CNN
+F 2 "SM1206" V 4400 4300 60  0000 C CNN
+F 4 "1276-5685-1-ND" V 4500 4300 60  0000 C CNN "digikey"
+	1    4200 4300
 	1    0    0    -1  
 $EndComp
 $Comp
 L LED Dp101
 U 1 1 53DA211C
-P 3500 2500
-F 0 "Dp101" H 3500 2600 50  0000 C CNN
-F 1 "LED" H 3500 2400 50  0000 C CNN
-F 2 "SM1206" H 3500 2300 60  0000 C CNN
-F 4 "732-4994-1-ND" H 3500 2200 60  0000 C CNN "digikey"
-	1    3500 2500
+P 4200 3200
+F 0 "Dp101" H 4200 3300 50  0000 C CNN
+F 1 "LED" H 4200 3100 50  0000 C CNN
+F 2 "SM1206" H 4200 3000 60  0000 C CNN
+F 4 "732-4994-1-ND" H 4200 2900 60  0000 C CNN "digikey"
+	1    4200 3200
 	0    1    1    0   
 $EndComp
 $Comp
