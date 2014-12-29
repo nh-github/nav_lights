@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 27 Dec 2014 01:34:47 AM HST
+EESchema Schematic File Version 2  date Mon 29 Dec 2014 01:53:40 AM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title ""
-Date "27 dec 2014"
+Date "29 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,39 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 8750 4650
+$Comp
+L MECH MECH7
+U 1 1 54A140B1
+P 8450 4650
+F 0 "MECH7" H 8450 4600 60  0000 C CNN
+F 1 "MECH" H 8450 4700 60  0000 C CNN
+F 2 "fiducial" H 8450 4500 60  0000 C CNN
+	1    8450 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH MECH6
+U 1 1 54A140A7
+P 8450 4350
+F 0 "MECH6" H 8450 4300 60  0000 C CNN
+F 1 "MECH" H 8450 4400 60  0000 C CNN
+F 2 "fiducial" H 8450 4200 60  0000 C CNN
+	1    8450 4350
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8750 4350
+NoConn ~ 8750 4050
+$Comp
+L MECH MECH5
+U 1 1 54A14065
+P 8450 4050
+F 0 "MECH5" H 8450 4000 60  0000 C CNN
+F 1 "MECH" H 8450 4100 60  0000 C CNN
+F 2 "fiducial" H 8450 3900 60  0000 C CNN
+	1    8450 4050
+	1    0    0    -1  
+$EndComp
 Connection ~ 8900 3150
 Wire Wire Line
 	8900 2550 8900 3450
