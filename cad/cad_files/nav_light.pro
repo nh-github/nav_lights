@@ -1,4 +1,4 @@
-update=Mon 29 Dec 2014 01:49:43 AM HST
+update=Wed 31 Dec 2014 11:30:20 PM HST
 version=1
 last_client=pcbnew
 [cvpcb]
