@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 31 Dec 2014 02:14:48 PM HST
+EESchema Schematic File Version 2  date Wed 31 Dec 2014 11:28:36 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -53,9 +53,9 @@ Wire Wire Line
 	6100 2700 5200 2700
 Connection ~ 6100 2100
 Wire Wire Line
-	6100 2100 6100 2700
+	6100 2700 6100 2100
 Wire Wire Line
-	6500 2100 5750 2100
+	5750 2100 6500 2100
 Wire Wire Line
 	4200 4650 4200 4550
 Wire Wire Line
@@ -75,7 +75,7 @@ Connection ~ 6500 3300
 Wire Wire Line
 	6600 3300 6500 3300
 Wire Wire Line
-	6500 2500 6500 2100
+	6500 2100 6500 2500
 Wire Wire Line
 	6500 3100 6500 3400
 Wire Wire Line
