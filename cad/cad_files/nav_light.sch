@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 03:44:31 AM HST
+EESchema Schematic File Version 2  date Wed 31 Dec 2014 02:14:48 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title ""
-Date "29 dec 2014"
+Date "1 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,72 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	2500 3000 2300 3000
+Wire Wire Line
+	2300 3000 2300 5700
+Wire Wire Line
+	2300 5700 5700 5700
+Connection ~ 8900 3150
+Wire Wire Line
+	8900 2550 8900 3450
+Wire Wire Line
+	8900 3450 8750 3450
+Connection ~ 8900 2550
+Wire Wire Line
+	8900 2850 8750 2850
+Wire Wire Line
+	2300 2800 2500 2800
+Wire Wire Line
+	5500 5100 5700 5100
+Wire Wire Line
+	5700 5100 5700 5700
+Wire Wire Line
+	4100 3300 4100 5200
+Wire Wire Line
+	4100 3300 3500 3300
+Wire Wire Line
+	7500 2600 7700 2600
+Wire Wire Line
+	7700 2600 7700 5000
+Wire Wire Line
+	7700 5000 5500 5000
+Wire Wire Line
+	6500 2600 5700 2600
+Wire Wire Line
+	5700 2600 5700 4800
+Wire Wire Line
+	5700 4800 5500 4800
+Wire Wire Line
+	4500 4600 4300 4600
+Wire Wire Line
+	4300 4600 4300 2600
+Wire Wire Line
+	4300 2600 3500 2600
+Wire Wire Line
+	3500 2700 4200 2700
+Wire Wire Line
+	4200 2700 4200 4700
+Wire Wire Line
+	4200 4700 4500 4700
+Wire Wire Line
+	5500 4900 5800 4900
+Wire Wire Line
+	5800 4900 5800 2700
+Wire Wire Line
+	5800 2700 6500 2700
+Wire Wire Line
+	6500 2800 4200 2800
+Connection ~ 4200 2800
+Wire Wire Line
+	2300 2600 2500 2600
+Wire Wire Line
+	9000 2550 8750 2550
+Wire Wire Line
+	8750 3150 8900 3150
+Connection ~ 8900 2850
+Wire Wire Line
+	4100 5200 4500 5200
 NoConn ~ 8750 5250
 $Comp
 L MECH MECH8
@@ -89,66 +155,6 @@ F 2 "fiducial" H 8450 3900 60  0000 C CNN
 	1    8450 4050
 	1    0    0    -1  
 $EndComp
-Connection ~ 8900 3150
-Wire Wire Line
-	8900 2550 8900 3450
-Wire Wire Line
-	8900 3450 8750 3450
-Connection ~ 8900 2550
-Wire Wire Line
-	8900 2850 8750 2850
-Wire Wire Line
-	2300 2800 2500 2800
-Wire Wire Line
-	5500 5100 5700 5100
-Wire Wire Line
-	5700 5100 5700 5700
-Wire Wire Line
-	5700 5700 4100 5700
-Wire Wire Line
-	4100 5700 4100 3300
-Wire Wire Line
-	4100 3300 3500 3300
-Wire Wire Line
-	7500 2600 7700 2600
-Wire Wire Line
-	7700 2600 7700 5000
-Wire Wire Line
-	7700 5000 5500 5000
-Wire Wire Line
-	6500 2600 5700 2600
-Wire Wire Line
-	5700 2600 5700 4800
-Wire Wire Line
-	5700 4800 5500 4800
-Wire Wire Line
-	4500 4600 4300 4600
-Wire Wire Line
-	4300 4600 4300 2600
-Wire Wire Line
-	4300 2600 3500 2600
-Wire Wire Line
-	3500 2700 4200 2700
-Wire Wire Line
-	4200 2700 4200 4700
-Wire Wire Line
-	4200 4700 4500 4700
-Wire Wire Line
-	5500 4900 5800 4900
-Wire Wire Line
-	5800 4900 5800 2700
-Wire Wire Line
-	5800 2700 6500 2700
-Wire Wire Line
-	4200 2800 6500 2800
-Connection ~ 4200 2800
-Wire Wire Line
-	2300 2600 2500 2600
-Wire Wire Line
-	9000 2550 8750 2550
-Wire Wire Line
-	8900 3150 8750 3150
-Connection ~ 8900 2850
 Text Label 9000 2550 0    60   ~ 0
 bat_neg
 Text Label 4400 2800 0    60   ~ 0
@@ -213,7 +219,8 @@ F3 "led_ctrl" O R 5500 4900 60
 F4 "battery_neg" I L 4500 4700 60 
 F5 "battery_pos" I L 4500 4600 60 
 F6 "powerpath_vdd" I R 5500 4800 60 
-F7 "charge_status" I R 5500 5100 60 
+F7 "charge_status" I L 4500 5200 60 
+F8 "misc_status" O R 5500 5100 60 
 $EndSheet
 $Sheet
 S 2500 2500 1000 1000
@@ -225,6 +232,7 @@ F3 "battery_pos" O R 3500 2600 60
 F4 "chgr_gnd" I L 2500 2800 60 
 F5 "+5V" I L 2500 2600 60 
 F6 "charge_status" O R 3500 3300 60 
+F7 "status_led" I L 2500 3000 60 
 $EndSheet
 $Sheet
 S 6500 2500 1000 1000

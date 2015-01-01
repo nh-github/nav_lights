@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 03:44:31 AM HST
+EESchema Schematic File Version 2  date Wed 31 Dec 2014 02:14:48 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "Battery Charger"
-Date "29 dec 2014"
+Date "1 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,10 +45,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 4200 2800 0    60   Input ~ 0
+status_led
 Wire Wire Line
 	4200 3400 4200 4050
-Text Label 4200 2800 0    60   ~ 0
-V_fb
 Wire Wire Line
 	6100 2700 5200 2700
 Connection ~ 6100 2100

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 03:44:31 AM HST
+EESchema Schematic File Version 2  date Wed 31 Dec 2014 02:14:48 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "LED Driver"
-Date "29 dec 2014"
+Date "1 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
