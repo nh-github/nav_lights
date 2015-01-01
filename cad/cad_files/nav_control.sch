@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 31 Dec 2014 11:28:36 PM HST
+EESchema Schematic File Version 2  date Wed 31 Dec 2014 11:33:36 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -77,7 +77,7 @@ Wire Wire Line
 Wire Wire Line
 	3800 4900 4000 4900
 Wire Wire Line
-	3800 4600 4000 4600
+	3800 4700 4000 4700
 Wire Wire Line
 	3800 4400 4000 4400
 Wire Wire Line
@@ -148,7 +148,7 @@ Connection ~ 3100 6200
 Wire Wire Line
 	3800 4500 4000 4500
 Wire Wire Line
-	3800 4700 4000 4700
+	3800 4800 4000 4800
 Wire Wire Line
 	6600 2200 6600 2000
 Connection ~ 6600 2200
@@ -288,7 +288,7 @@ NoConn ~ 3800 5500
 NoConn ~ 3800 5400
 NoConn ~ 3800 5300
 NoConn ~ 3800 5200
-NoConn ~ 3800 4800
+NoConn ~ 3800 4600
 NoConn ~ 2200 5700
 NoConn ~ 2200 5600
 NoConn ~ 2200 5500
@@ -368,9 +368,9 @@ Text Label 4100 1200 0    60   ~ 0
 switch_control
 Text HLabel 7300 2200 2    60   Input ~ 0
 powerpath_vdd
-Text HLabel 4000 4600 2    60   Input ~ 0
+Text HLabel 4000 4700 2    60   Input ~ 0
 led_status
-Text HLabel 4000 4700 2    60   Output ~ 0
+Text HLabel 4000 4800 2    60   Output ~ 0
 led_ctrl
 Text HLabel 2000 1100 0    60   Input ~ 0
 battery_neg
@@ -405,7 +405,7 @@ $EndComp
 Text Notes 4050 4050 0    60   ~ 0
 jumper towards DS2712::LED1 for charger activity monitoring
 Text Notes 4900 4400 0    60   ~ 0
-P2 (INT0) for power button sensing\nP3 (INT1) for charger status sensing\nP4 for led status sensing (polled)
+P2 (INT0) for power button sensing\nP3 (INT1) for charger status sensing\nP5 for led status sensing (polled)
 $Comp
 L GND #PWR07
 U 1 1 53DB8078
