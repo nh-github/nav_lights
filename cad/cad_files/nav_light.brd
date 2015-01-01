@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Thu 01 Jan 2015 12:58:14 AM HST
+PCBNEW-BOARD Version 1 date Thu 01 Jan 2015 01:01:37 AM HST
 
 # Created by Pcbnew(2012-apr-16-27)-stable
 
@@ -2047,7 +2047,7 @@ Po 43500 20000 350 600 80 0
 De 21 1 0 Normal L
 $EndTEXTPCB
 $TEXTPCB
-Te "©2014"
+Te "©2015"
 nl " Noah Hafner"
 Po 31750 26750 450 650 80 900
 De 23 1 0 Normal L
