@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 01 Jan 2015 09:39:00 PM HST
+EESchema Schematic File Version 2  date Thu 01 Jan 2015 10:15:34 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -45,6 +45,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 4400 2600 0    60   ~ 0
+bat_pos
 Connection ~ 4300 2600
 Wire Wire Line
 	2500 3000 2300 3000
@@ -54,11 +56,7 @@ Wire Wire Line
 	2300 5700 5700 5700
 Connection ~ 8900 3150
 Wire Wire Line
-	8900 2550 8900 2850
-Wire Wire Line
-	8900 2850 8900 3150
-Wire Wire Line
-	8900 3150 8900 3450
+	8900 2550 8900 3450
 Wire Wire Line
 	8900 3450 8750 3450
 Connection ~ 8900 2550
@@ -81,19 +79,15 @@ Wire Wire Line
 Wire Wire Line
 	7700 5000 5500 5000
 Wire Wire Line
-	6500 2600 4300 2600
+	6500 2600 3500 2600
 Wire Wire Line
 	4500 4600 4300 4600
 Wire Wire Line
 	4300 4600 4300 2600
 Wire Wire Line
-	4300 2600 3500 2600
-Wire Wire Line
 	3500 2700 4200 2700
 Wire Wire Line
-	4200 2700 4200 2800
-Wire Wire Line
-	4200 2800 4200 4700
+	4200 2700 4200 4700
 Wire Wire Line
 	4200 4700 4500 4700
 Wire Wire Line
@@ -108,9 +102,7 @@ Connection ~ 4200 2800
 Wire Wire Line
 	2300 2600 2500 2600
 Wire Wire Line
-	9000 2550 8900 2550
-Wire Wire Line
-	8900 2550 8750 2550
+	9000 2550 8750 2550
 Wire Wire Line
 	8750 3150 8900 3150
 Connection ~ 8900 2850
