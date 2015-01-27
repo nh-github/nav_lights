@@ -8,18 +8,14 @@ public Thread
 {
 public:
   int pin;
+  int duty = 1;
+  int rate = 1;
+  int duty_base = 10;
   void run(){
     runned();  // needed for threading infrastructure
     static bool ledStatus = false;
-    ledStatus = !ledStatus;
+    ledStatus = duty > ((rate * millis()) / 100) % duty_base;
     digitalWrite(pin, ledStatus);
-
-//    static long counter = 0;
-//    
-//    int limit = 2;
-//    counter++;
-//    counter %= limit;
-//    digitalWrite(pin, 0==counter);
   }
 };
 
@@ -117,7 +113,7 @@ public:
   //2 - on, high
   //3 - on, time varying (pattern/waveform)
   //4 - same as (3) with different pattern
-  int LED_mode_lim = 8;
+  int LED_mode_lim = 3;
 
   int wfrm_len=50;
   const static int wfrm_max_len=200;
@@ -159,13 +155,14 @@ public:
     42, 40, 38, 36, 34, 32, 30, 28, 26, 24,
     22, 20, 18, 17, 15, 13, 12, 10, 9, 7,
     6, 5, 4, 3, 2, 2, 1, 1, 0, 0  };
-  int wfrmE_len=50;
+  int wfrmE_len=2; //50;
   int wfrmE[wfrm_max_len]={ // l ==50
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-    2, 2, 2, 2, 2, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1,
+    //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    //2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    //2, 2, 2, 2, 2, 1, 1, 1, 1, 1,
+    //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     };
   //int wfrm[wfrm_max_len]={255,  255};
 
@@ -222,7 +219,7 @@ public:
 //      i %= wfrm_len;
 //    }
     else if(8 == LED_mode){
-      analogWrite(pin, 8);
+      analogWrite(pin, 1);
     }
   }
 };
