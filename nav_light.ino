@@ -112,9 +112,12 @@ public:
   int pin;
   void run(){
     runned();  // needed for threading infrastructure
-    static bool ledStatus = false;
-    ledStatus = !ledStatus;
-    digitalWrite(pin, ledStatus);
+    static long counter = 0;
+    
+    int limit = 2;
+    counter++;
+    counter %= limit;
+    digitalWrite(pin, 0==counter);
   }
 };
 
@@ -125,7 +128,7 @@ public Thread
 public:
   int pin;
   int pwr_low = 1;
-  int pwr_high = 250;
+  int pwr_high = 5;
   int LED_mode = 0;
   //MODES: 
   //0 - off
@@ -133,39 +136,43 @@ public:
   //2 - on, high
   //3 - on, time varying (pattern/waveform)
   //4 - same as (3) with different pattern
-  int LED_mode_lim = 6;
+  int LED_mode_lim = 8;
 
   int wfrm_len=50;
   const static int wfrm_max_len=200;
-  //  int wfrm[wfrm_max_len]={ // l == 100
-  //    0, 0, 0, 1, 1, 2, 2, 3, 4, 5,
-  //    6, 7, 9, 10, 12, 13, 15, 17, 18, 20,
-  //    22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
-  //    42, 44, 46, 47, 49, 51, 52, 54, 55, 57,
-  //    58, 59, 60, 61, 62, 62, 63, 63, 64, 64,
-  //    64, 64, 64, 63, 63, 62, 62, 61, 60, 59,
-  //    58, 57, 55, 54, 52, 51, 49, 47, 46, 44,
-  //    42, 40, 38, 36, 34, 32, 30, 28, 26, 24,
-  //    22, 20, 18, 17, 15, 13, 12, 10, 9, 7,
-  //    6, 5, 4, 3, 2, 2, 1, 1, 0, 0  };
-  //  int wfrm[wfrm_max_len]={ // l == 100
-  //    1, 4, 16, 34, 58, 87, 118, 149, 179, 205,
-  //    227, 242, 250, 250, 242, 227, 205, 179, 149, 118,
-  //    7, 58, 34, 16, 4, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-  //  int wfrm[wfrm_max_len]={ // l ==50
-  //    1, 1<<2, 1<<4, 1<<7, 1<<6, 1<<4, 1<<2, 1, 1, 1,
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-  //    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
-  int wfrm[wfrm_max_len]={ // l == 50
+  int wfrmD_len=100;
+  int wfrmD[wfrm_max_len]={ // l == 100
+    0, 0, 0, 1, 1, 2, 2, 3, 4, 5,
+    6, 7, 9, 10, 12, 13, 15, 17, 18, 20,
+    22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+    42, 44, 46, 47, 49, 51, 52, 54, 55, 57,
+    58, 59, 60, 61, 62, 62, 63, 63, 64, 64,
+    64, 64, 64, 63, 63, 62, 62, 61, 60, 59,
+    58, 57, 55, 54, 52, 51, 49, 47, 46, 44,
+    42, 40, 38, 36, 34, 32, 30, 28, 26, 24,
+    22, 20, 18, 17, 15, 13, 12, 10, 9, 7,
+    6, 5, 4, 3, 2, 2, 1, 1, 0, 0  };
+  int wfrmC_len=100;
+  int wfrmC[wfrm_max_len]={ // l == 100
+    1, 4, 16, 34, 58, 87, 118, 149, 179, 205,
+    227, 242, 250, 250, 242, 227, 205, 179, 149, 118,
+    7, 58, 34, 16, 4, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+  int wfrmB_len=50;
+  int wfrmB[wfrm_max_len]={ // l ==50
+    1, 1<<2, 1<<4, 1<<7, 1<<6, 1<<4, 1<<2, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+  int wfrmA_len=50;
+  int wfrmA[wfrm_max_len]={ // l == 50
     1,  1,  0,  0,  0,  0,  0,  0,  0,  0, 
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
     1,  0,  0,  0,  0,  0,  1,  0,  0,  0,
@@ -179,7 +186,6 @@ public:
   //>>>    print "{:d}, ".format(int(round(i))),
   //>>>    if 9 == j % 10:
   //>>>        print ""
-  // TODO: sinusoid nice, maybe try constant on w/ faster pluses and dead time between
   void run(){
     runned();  // needed for threading infrastructure
     static int i = 0;
@@ -197,16 +203,31 @@ public:
       analogWrite(pin, pwr_high);
     }
     else if(3 == LED_mode){
-      analogWrite(pin, wfrm[i]);
+      analogWrite(pin, wfrmA[i]);
       i++;
-      i %= wfrm_len;
+      i %= wfrmA_len;
     }
     else if(4 == LED_mode){
-      analogWrite(pin, pwr_high * wfrm[i]);
+      analogWrite(pin, wfrmB[i]);
       i++;
-      i %= wfrm_len;
+      i %= wfrmB_len;
     }
     else if(5 == LED_mode){
+      analogWrite(pin, wfrmC[i]);
+      i++;
+      i %= wfrmC_len;
+    }
+    else if(6 == LED_mode){
+      analogWrite(pin, wfrmD[i]);
+      i++;
+      i %= wfrmD_len;
+    }
+//    else if(4 == LED_mode){
+//      analogWrite(pin, pwr_high * wfrm[i]);
+//      i++;
+//      i %= wfrm_len;
+//    }
+    else if(7 == LED_mode){
       analogWrite(pin, 8);
     }
   }
@@ -245,11 +266,12 @@ void setup() {
   ui.setInterval(50);
 
   led1.pin = MISC_STAT;
-  led1.setInterval(200);  // 5 Hz changes, 2.5 for full cycle
+  led1.setInterval(500);
+  //led1.enabled = false;
 
-  led2.pin = LED_PIN;
-  led2.setInterval(500);  // 1 Hz cyclic, 2 Hz changes
-  led2.enabled = false;
+  //led2.pin = LED_PIN;
+  //led2.setInterval(30);  // 1 Hz cyclic, 2 Hz changes
+  //led2.enabled = false;
 
   light.pin = LED_CTRL;
   light.setInterval(20);
@@ -281,10 +303,7 @@ void loop() {
         light.LED_mode %= light.LED_mode_lim;
     }
   }
-  Serial.print("LEDm ");
-  Serial.print(light.LED_mode);
-  Serial.print("\n");
-  delay(10);
+  delay(20);
 
   // SHUTDOWN
   if(4==ui.state){
