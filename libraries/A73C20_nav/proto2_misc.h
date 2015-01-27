@@ -113,7 +113,7 @@ public:
   //2 - on, high
   //3 - on, time varying (pattern/waveform)
   //4 - same as (3) with different pattern
-  int LED_mode_lim = 3;
+  int LED_mode_lim = 7;
 
   int wfrm_len=50;
   const static int wfrm_max_len=200;
@@ -143,28 +143,29 @@ public:
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-  int wfrmD_len=100;
-  int wfrmD[wfrm_max_len]={ // l == 100
-    0, 0, 0, 1, 1, 2, 2, 3, 4, 5,
-    6, 7, 9, 10, 12, 13, 15, 17, 18, 20,
-    22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
-    42, 44, 46, 47, 49, 51, 52, 54, 55, 57,
-    58, 59, 60, 61, 62, 62, 63, 63, 64, 64,
-    64, 64, 64, 63, 63, 62, 62, 61, 60, 59,
-    58, 57, 55, 54, 52, 51, 49, 47, 46, 44,
-    42, 40, 38, 36, 34, 32, 30, 28, 26, 24,
-    22, 20, 18, 17, 15, 13, 12, 10, 9, 7,
-    6, 5, 4, 3, 2, 2, 1, 1, 0, 0  };
-  int wfrmE_len=2; //50;
-  int wfrmE[wfrm_max_len]={ // l ==50
-    1, 1,
-    //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    //2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-    //2, 2, 2, 2, 2, 1, 1, 1, 1, 1,
-    //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    };
-  //int wfrm[wfrm_max_len]={255,  255};
+  // NOTE: ADDING ADDITIONAL WAVEFORMS BORKS UP THINGS
+  //int wfrmD_len=100;
+  //int wfrmD[wfrm_max_len]={ // l == 100
+  //  0, 0, 0, 1, 1, 2, 2, 3, 4, 5,
+  //  6, 7, 9, 10, 12, 13, 15, 17, 18, 20,
+  //  22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+  //  42, 44, 46, 47, 49, 51, 52, 54, 55, 57,
+  //  58, 59, 60, 61, 62, 62, 63, 63, 64, 64,
+  //  64, 64, 64, 63, 63, 62, 62, 61, 60, 59,
+  //  58, 57, 55, 54, 52, 51, 49, 47, 46, 44,
+  //  42, 40, 38, 36, 34, 32, 30, 28, 26, 24,
+  //  22, 20, 18, 17, 15, 13, 12, 10, 9, 7,
+  //  6, 5, 4, 3, 2, 2, 1, 1, 0, 0  };
+  //int wfrmE_len=2; //50;
+  //int wfrmE[wfrm_max_len]={ // l ==50
+  //  1, 1,
+  //  //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  //  //2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  //  //2, 2, 2, 2, 2, 1, 1, 1, 1, 1,
+  //  //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  //  //1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  //  };
+  ////int wfrm[wfrm_max_len]={255,  255};
 
   //>>>t = np.arange(0,2,1/50.)
   //>>>v=(1-np.cos(t * np.pi)) * 32
@@ -175,9 +176,12 @@ public:
   void run(){
     runned();  // needed for threading infrastructure
     static int i = 0;
-    if(LED_mode > LED_mode_lim){
-      LED_mode = 0;
-    }
+  //  if(0 > LED_mode){
+  //    LED_mode = 0;
+  //  }
+  //  if(LED_mode > LED_mode_lim){
+  //    LED_mode = LED_mode_lim - 1;
+  //  }
     // MODE PROGRAMMING
     if(0 == LED_mode){
       analogWrite(pin, 0);
@@ -186,40 +190,19 @@ public:
       analogWrite(pin, pwr_low);
     }
     else if(2 == LED_mode){
-      analogWrite(pin, pwr_high);
-    }
-    else if(3 == LED_mode){
-      analogWrite(pin, wfrmA[i]);
       i++;
       i %= wfrmA_len;
+      analogWrite(pin, wfrmA[i]);
     }
-    else if(4 == LED_mode){
-      analogWrite(pin, wfrmB[i]);
+    else if(3 == LED_mode){
       i++;
       i %= wfrmB_len;
+      analogWrite(pin, wfrmB[i]);
     }
-    else if(5 == LED_mode){
-      analogWrite(pin, wfrmC[i]);
+    else if(4 == LED_mode){
       i++;
       i %= wfrmC_len;
-    }
-    else if(6 == LED_mode){
-      analogWrite(pin, wfrmD[i]);
-      i++;
-      i %= wfrmD_len;
-    }
-    else if(7 == LED_mode){
-      analogWrite(pin, wfrmE[i]);
-      i++;
-      i %= wfrmE_len;
-    }
-//    else if(4 == LED_mode){
-//      analogWrite(pin, pwr_high * wfrm[i]);
-//      i++;
-//      i %= wfrm_len;
-//    }
-    else if(8 == LED_mode){
-      analogWrite(pin, 1);
+      analogWrite(pin, wfrmC[i]);
     }
   }
 };
