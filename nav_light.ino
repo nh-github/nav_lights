@@ -40,6 +40,22 @@ lightingThread light = lightingThread();
 // One Controller to run them all
 ThreadController controller = ThreadController();
 
+typedef void (*void_callback)();
+
+void baa(){
+  Serial.print("baa");
+}
+
+void_callback func = &baa;
+
+//void func ( void (*f)(int) );
+
+void callbaa( void (*f)()){
+  f();
+}
+  void callbaa_static(){
+  func();
+}
 
 void setup() {
   Serial.begin(115200);  // SERIAL DEBUG
@@ -78,6 +94,14 @@ void setup() {
     delay(100);
   }
   digitalWrite(MISC_STAT, LOW);
+
+  Serial.print("foo\n");
+  //baa();
+  callbaa(baa);
+  callbaa_static();
+  Serial.print("\nbar\n");
+  delay(10000);
+
 }  // setup
 
 
