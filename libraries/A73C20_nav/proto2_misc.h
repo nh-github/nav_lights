@@ -1,6 +1,14 @@
 #ifndef PROTO2_MISC_H
 #define PROTO2_MISC_H
 #include "Arduino.h"
+//#include "avr/pgmspace.h"  // doesn't work
+
+//#include <StandardCplusplus.h>
+#include <vector>
+#include <iterator>
+
+// typedef for simple callbacks
+typedef void (*cb)(int); 
 
 // derive from thread class for onboard indicators
 class indicatorThread: 
@@ -27,10 +35,16 @@ public:
   int pin;
   int state = 0;
   long duration = 0;
+  cb cb_push = & event_push;
+  cb cb_hold = & event_hold;
+
   void run(){
-    // check the UI button and do something with it
+    // check the UI button and mark short/long press/hold things
+    // run at ~50ms intervals
+    // TODO: feed a callback/function pointer for state changes
+    //
     // how to get data out of callback? global var?
-    // Serial.print(ui.statevar); ?
+
     // track time seen for high value
     // check delay to next low value
     // 0.25s/1s short/long presses
@@ -42,58 +56,80 @@ public:
     // * 3 - held for at least 4 seconds (ongoing)
     runned();  // needed for threading infrastructure
     int SHORT_LIMIT = 50;
-    int LONG_LIMIT = 1000;
-    int HOLD_LIMIT = 4000;
-    long RESET_DELAY = 500;
+    int LONG_LIMIT = 500;
+    int HOLD_LIMIT = 2000;
+    //long RESET_DELAY = 500;
 
-    static int val;
-    static long t0 = 0;
+    static int val_c = 0;
+    static int val_p = 0;
+    static long start_time = 0;
     static long t1 = 0;
-    //static long duration = 0;
-    static long reset_time = 0;
+    static long t1b = 0;
+    static long duration = 0;
+    //
+    int pressed_type = 0;
+    //static long reset_time = 0;
     // ware - this WILL clear on release
-    val = digitalRead(pin);
-    if(0 == val){
-      t0 = millis();
-      //digitalWrite(LED_PIN, LOW);
-    }
-    else{
-      t1 = millis();
-      duration = t1 - t0;
-      //digitalWrite(LED_PIN, HIGH);
-    }
 
-    if(HOLD_LIMIT <= duration){
-      state = 4;
-      reset_time = millis() + RESET_DELAY;
+
+    // if pin vals = [0,1]
+    //   update start_time
+    //   set button val [state] = 0
+    // if pin vals = [1,1]
+    //   check for long hold
+    // if pin vals = [1,0]
+    //   check pres duration, set button val [state]
+
+    val_p = val_c;
+    val_c = digitalRead(pin);
+    if(0 == val_p && 0 == val_c){  // low
     }
-    else if(LONG_LIMIT <= duration){
-      state = 3;
-      reset_time = millis() + RESET_DELAY;
+    else if(0 == val_p && 1 == val_c){  // rising edge
+      start_time = millis();
+      pressed_type = 0;
+      duration = 0;
     }
-    else if(SHORT_LIMIT <= duration){
-      state = 2;
-      reset_time = millis() + RESET_DELAY;
-    }
-    else{
-      if(reset_time < millis()){
-        //state = 0;
-        //duration = 0;
+    else if(1 == val_p && 1 == val_c){  // high
+      if(start_time + HOLD_LIMIT < millis()){
+        start_time = LONG_LIMIT + millis();
+        cb_hold(25);
+        //Serial.print("timeout!\n");
+        //delay(20);
+      }
+      else{
+        Serial.print("running duration: ");
+        Serial.print(millis() - start_time);
+        Serial.print("\n");
       }
     }
-    ArduinoJson::Generator::JsonObject<22> data;
-    data["t0"] = t0;
-    data["t1"] = t1;
-    data["dur"] = duration;
-    data["S"] = state;
-    data["r"] = reset_time;
-    // also possible: data.prettyPrintTo(Serial);
+    else if(1 == val_p && 0 == val_c){  // falling edge
+      duration = millis() - start_time;
+      if(SHORT_LIMIT <= duration && duration < LONG_LIMIT){
+        cb_push(1);
+        //Serial.print("press: 1 short\n");
+      }
+      else if(LONG_LIMIT <= duration && duration < HOLD_LIMIT){
+        cb_push(2);
+        //Serial.print("press: 2 long\n");
+      }
+    }
   }
-  int get_state(){
-    int ret = state;
-    duration = 0;
-    state = 0;
-    return ret;
+  //int get_state(){
+  //  int ret = state;
+  //  duration = 0;
+  //  state = 0;
+  //  return ret;
+  //}
+
+  void static event_push(int push_type){
+    if(1 == push_type){ Serial.print("push event: 1 short\n");}
+    if(2 == push_type){ Serial.print("push event: 2 long\n");}
+    Serial.print("  (replace this callback with desired function)\n");
+  }
+  void static event_hold(int pause){
+    Serial.print("timeout!\n");
+    Serial.print("  (replace this callback with desired function)\n");
+    delay(pause);
   }
 };
 
@@ -105,7 +141,7 @@ public Thread
 public:
   int pin;
   int pwr_low = 1;
-  int pwr_high = 5;
+  int pwr_high = 250;
   int LED_mode = 0;
   //MODES: 
   //0 - off
@@ -113,7 +149,7 @@ public:
   //2 - on, high
   //3 - on, time varying (pattern/waveform)
   //4 - same as (3) with different pattern
-  int LED_mode_lim = 7;
+  int LED_mode_lim = 6;
 
   int wfrm_len=50;
   const static int wfrm_max_len=200;
@@ -126,21 +162,16 @@ public:
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,   };
   int wfrmB_len=50;
   int wfrmB[wfrm_max_len]={ // l ==50
-    1, 1<<2, 1<<4, 1<<7, 1<<6, 1<<4, 1<<2, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1<<2, 1<<3, 1<<4, 1<<5, 1<<6, 1<<7, 250, 250, 250,
+    250, 250, 250, 1<<7, 1<<6, 1<<5, 1<<4, 1<<3, 1<<2, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
-  int wfrmC_len=100;
+  int wfrmC_len=50;
   int wfrmC[wfrm_max_len]={ // l == 100
     1, 4, 16, 34, 58, 87, 118, 149, 179, 205,
     227, 242, 250, 250, 242, 227, 205, 179, 149, 118,
     7, 58, 34, 16, 4, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
   // NOTE: ADDING ADDITIONAL WAVEFORMS BORKS UP THINGS
@@ -204,6 +235,13 @@ public:
       i %= wfrmC_len;
       analogWrite(pin, wfrmC[i]);
     }
+    else if(5 == LED_mode){
+      analogWrite(pin, pwr_high);
+    }
+  }
+  void mode_cycle(){
+    LED_mode += 1;
+    LED_mode %= LED_mode_lim;
   }
 };
 
