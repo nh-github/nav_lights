@@ -94,8 +94,8 @@ void loop() {
   if(timer < millis()){
     timer = millis() + 500;
     if(2==ui.get_state()){
-        light.LED_mode += 1;
-        light.LED_mode %= light.LED_mode_lim;
+      light.LED_mode += 1;
+      light.LED_mode %= light.LED_mode_lim;
     }
   }
   digitalWrite(LED_PIN, digitalRead(PWR_SENSE));
@@ -109,20 +109,21 @@ void loop() {
 }
 
 void shutdown_hold(){
-    Serial.print("SHUTTING DOWN\n");
-    controller.clear();
-    digitalWrite(PWR_CTRL, LOW);
-    digitalWrite(LED_CTRL, LOW);
+  Serial.print("SHUTTING DOWN\n");
+  controller.clear();
+  digitalWrite(PWR_CTRL, LOW);
+  digitalWrite(LED_CTRL, LOW);
 
-    // kill threads
-    // turn off all LEDs
-    // turn off power
-    // spin until power removed
-    while(true){
-      digitalWrite(MISC_STAT, HIGH);
-      delay(25);
-      digitalWrite(MISC_STAT, LOW);
-      delay(225);
-      Serial.print("waiting for pwr cut\n");
-    }
+  // kill threads
+  // turn off all LEDs
+  // turn off power
+  // spin until power removed
+  while(true){
+    digitalWrite(MISC_STAT, HIGH);
+    delay(25);
+    digitalWrite(MISC_STAT, LOW);
+    delay(225);
+    Serial.print("waiting for pwr cut\n");
+  }
 }
+
