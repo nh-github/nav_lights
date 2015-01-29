@@ -69,7 +69,9 @@ void setup() {
   // threading setup
   ui.pin = PWR_SENSE;
   ui.setInterval(50);
-
+  ui.cb_hold = & shutdown_hold;
+  ui.cb_push = & change_mode;
+  
   //led1.pin = MISC_STAT;
   //led1.setInterval(500);
   //led1.enabled = false;  // turn on later
@@ -95,39 +97,45 @@ void setup() {
   }
   digitalWrite(MISC_STAT, LOW);
 
-  Serial.print("foo\n");
-  //baa();
-  callbaa(baa);
-  callbaa_static();
-  Serial.print("\nbar\n");
-  delay(10000);
+//  Serial.print("foo\n");
+//  //baa();
+//  callbaa(baa);
+//  callbaa_static();
+//  Serial.print("\nbar\n");
+//  delay(10000);
 
 }  // setup
 
 
 void loop() {
-  Serial.print("loop\n");
+  //Serial.print("loop\n");
 
   controller.run();
-  static long timer = 0;
-  if(timer < millis()){
-    timer = millis() + 500;
-    if(2==ui.get_state()){
-      light.LED_mode += 1;
-      light.LED_mode %= light.LED_mode_lim;
-    }
-  }
+//  static long timer = 0;
+//  if(timer < millis()){
+//    timer = millis() + 500;
+//    if(2==ui.get_state()){
+//      //light.LED_mode += 1;
+//      light.LED_mode %= light.LED_mode_lim;
+//    }
+//  }
   digitalWrite(LED_PIN, digitalRead(PWR_SENSE));
 
   delay(20);
 
-  // SHUTDOWN
-  if(4==ui.state){
-    shutdown_hold();
+//  // SHUTDOWN
+//  if(4==ui.state){
+//    shutdown_hold(25);
+//  }
+}
+
+void change_mode(int detail){
+  if(1 == detail){
+    light.mode_cycle();
   }
 }
 
-void shutdown_hold(){
+void shutdown_hold(int base){
   Serial.print("SHUTTING DOWN\n");
   controller.clear();
   digitalWrite(PWR_CTRL, LOW);
@@ -139,9 +147,9 @@ void shutdown_hold(){
   // spin until power removed
   while(true){
     digitalWrite(MISC_STAT, HIGH);
-    delay(25);
+    delay(base);
     digitalWrite(MISC_STAT, LOW);
-    delay(225);
+    delay(base * 5);
     Serial.print("waiting for pwr cut\n");
   }
 }
