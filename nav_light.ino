@@ -13,6 +13,7 @@ TODO: try threading
 #include "Thread.h"
 #include "ThreadController.h"
 #include <JsonGenerator.h>
+#include <StandardCplusplus.h>  // req for proto2_misc lib
 
 #include "proto2_misc.h"
 
@@ -48,35 +49,29 @@ void setup() {
   pinMode(MISC_STAT, OUTPUT);
   digitalWrite(PWR_CTRL, HIGH);
 
-  Serial.print(".");
 
   // threading setup
   ui.pin = PWR_SENSE;
   ui.setInterval(50);
 
-  Serial.print(".");
   //led1.pin = MISC_STAT;
   //led1.setInterval(500);
   //led1.enabled = false;  // turn on later
 
-  Serial.print(".");
   //led2.pin = LED_PIN;
   //led2.setInterval(500);  // 1 Hz cyclic, 2 Hz changes
   //led2.enabled = false;
 
-  Serial.print(".");
   light.pin = LED_CTRL;
   light.setInterval(20);
   //light.enabled = false;
 
-  Serial.print(".");
 
   controller.add(&ui);
   //controller.add(&led1);
   //controller.add(&led2);
   controller.add(&light);
 
-  Serial.print(".");
   for(int i=9; i>0; i--){
     digitalWrite(MISC_STAT, i%2);
     digitalWrite(LED_PIN, i%3);
