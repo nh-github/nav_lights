@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 29 Dec 2014 03:44:31 AM HST
+EESchema Schematic File Version 2  date Thu 01 Jan 2015 10:15:34 PM HST
 LIBS:local_parts
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "29 dec 2014"
+Date "2 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,143 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	4000 5100 3800 5100
+Connection ~ 1000 5800
+Wire Wire Line
+	1400 5700 1400 5800
+Wire Wire Line
+	1400 5800 1000 5800
+Connection ~ 1000 4300
+Wire Wire Line
+	1000 4300 1400 4300
+Wire Wire Line
+	1400 4300 1400 4400
+Connection ~ 1400 5100
+Wire Wire Line
+	2200 5100 1400 5100
+Connection ~ 1000 5000
+Wire Wire Line
+	1000 5200 1000 4900
+Wire Wire Line
+	6900 2600 6400 2600
+Wire Wire Line
+	6400 2600 6400 2500
+Wire Wire Line
+	3800 5000 4000 5000
+Wire Wire Line
+	4800 2200 4700 2200
+Connection ~ 6800 2200
+Wire Wire Line
+	6800 2200 6800 2500
+Wire Wire Line
+	3800 4900 4000 4900
+Wire Wire Line
+	3800 4700 4000 4700
+Wire Wire Line
+	3800 4400 4000 4400
+Wire Wire Line
+	3100 6100 3100 6300
+Wire Wire Line
+	2900 3900 2900 3700
+Wire Wire Line
+	6800 2800 6800 2700
+Wire Wire Line
+	6800 2700 6900 2700
+Wire Wire Line
+	6800 2500 6900 2500
+Wire Wire Line
+	7300 2200 5700 2200
+Wire Wire Line
+	2000 1100 2200 1100
+Connection ~ 4700 1000
+Wire Wire Line
+	5800 1550 5800 1000
+Connection ~ 4100 2600
+Wire Wire Line
+	4100 2600 3300 2600
+Wire Wire Line
+	3300 2600 3300 2500
+Wire Wire Line
+	4700 2200 4700 1000
+Connection ~ 4100 1600
+Wire Wire Line
+	4100 2000 4100 1200
+Wire Wire Line
+	4100 1200 3900 1200
+Wire Wire Line
+	3900 1600 4100 1600
+Connection ~ 3300 1800
+Wire Wire Line
+	3100 1800 3300 1800
+Wire Wire Line
+	3300 2000 3300 1400
+Wire Wire Line
+	3300 1600 3500 1600
+Connection ~ 3300 1600
+Wire Wire Line
+	3300 1200 3500 1200
+Wire Wire Line
+	4100 1800 4500 1800
+Connection ~ 4100 1800
+Wire Wire Line
+	2300 1000 2300 1800
+Wire Wire Line
+	2300 1800 2500 1800
+Wire Wire Line
+	4100 2700 4100 2500
+Wire Wire Line
+	5800 2200 5800 2050
+Connection ~ 5800 2200
+Wire Wire Line
+	5800 1000 2000 1000
+Connection ~ 2300 1000
+Wire Wire Line
+	2900 3100 2900 3200
+Wire Wire Line
+	2700 3100 2700 3900
+Wire Wire Line
+	3200 6100 3200 6200
+Wire Wire Line
+	3200 6200 3100 6200
+Connection ~ 3100 6200
+Wire Wire Line
+	3800 4500 4000 4500
+Wire Wire Line
+	3800 4800 4000 4800
+Wire Wire Line
+	6600 2200 6600 2000
+Connection ~ 6600 2200
+Wire Wire Line
+	4500 1800 4500 2600
+Wire Wire Line
+	4500 2600 4800 2600
+Wire Wire Line
+	4800 2400 4700 2400
+Wire Wire Line
+	4700 2400 4700 2500
+Wire Wire Line
+	5700 2600 5800 2600
+Wire Wire Line
+	2500 1000 2500 800 
+Connection ~ 2500 1000
+Wire Wire Line
+	2900 3800 3200 3800
+Wire Wire Line
+	3200 3800 3200 3700
+Connection ~ 2900 3800
+Wire Wire Line
+	2200 5000 1000 5000
+Wire Wire Line
+	1400 4900 1400 5200
+Wire Wire Line
+	1000 4200 1000 4400
+Wire Wire Line
+	1000 5900 1000 5700
+Wire Wire Line
+	2200 1100 2200 800 
+Text HLabel 4000 5100 2    60   Output ~ 0
+misc_status
 Text Label 1000 4200 1    60   ~ 0
 Vboosted
 Text Label 2700 3100 1    60   ~ 0
@@ -63,139 +200,6 @@ Text Label 2100 5100 2    60   ~ 0
 ctrl_temp_th
 Text Label 2200 1100 3    60   ~ 0
 battery_neg
-Wire Wire Line
-	2200 800  2200 1100
-Wire Wire Line
-	1000 5900 1000 5700
-Wire Wire Line
-	1000 4200 1000 4400
-Wire Wire Line
-	1400 4900 1400 5200
-Wire Wire Line
-	2200 5000 1000 5000
-Connection ~ 2900 3800
-Wire Wire Line
-	3200 3700 3200 3800
-Wire Wire Line
-	3200 3800 2900 3800
-Connection ~ 2500 1000
-Wire Wire Line
-	2500 1000 2500 800 
-Wire Wire Line
-	5700 2600 5800 2600
-Wire Wire Line
-	4700 2500 4700 2400
-Wire Wire Line
-	4700 2400 4800 2400
-Wire Wire Line
-	4800 2600 4500 2600
-Wire Wire Line
-	4500 2600 4500 1800
-Connection ~ 6600 2200
-Wire Wire Line
-	6600 2200 6600 2000
-Wire Wire Line
-	3800 4800 4000 4800
-Wire Wire Line
-	3800 4500 4000 4500
-Connection ~ 3100 6200
-Wire Wire Line
-	3100 6200 3200 6200
-Wire Wire Line
-	3200 6200 3200 6100
-Wire Wire Line
-	2700 3100 2700 3900
-Wire Wire Line
-	2900 3100 2900 3200
-Connection ~ 2300 1000
-Wire Wire Line
-	2000 1000 5800 1000
-Connection ~ 5800 2200
-Wire Wire Line
-	5800 2200 5800 2050
-Wire Wire Line
-	4100 2700 4100 2500
-Wire Wire Line
-	2500 1800 2300 1800
-Wire Wire Line
-	2300 1800 2300 1000
-Connection ~ 4100 1800
-Wire Wire Line
-	4500 1800 4100 1800
-Wire Wire Line
-	3300 1200 3500 1200
-Connection ~ 3300 1600
-Wire Wire Line
-	3300 1600 3500 1600
-Wire Wire Line
-	3300 2000 3300 1400
-Wire Wire Line
-	3100 1800 3300 1800
-Connection ~ 3300 1800
-Wire Wire Line
-	3900 1600 4100 1600
-Wire Wire Line
-	3900 1200 4100 1200
-Wire Wire Line
-	4100 1200 4100 2000
-Connection ~ 4100 1600
-Wire Wire Line
-	4700 1000 4700 2200
-Wire Wire Line
-	3300 2500 3300 2600
-Wire Wire Line
-	3300 2600 4100 2600
-Connection ~ 4100 2600
-Wire Wire Line
-	5800 1000 5800 1550
-Connection ~ 4700 1000
-Wire Wire Line
-	2200 1100 2000 1100
-Wire Wire Line
-	7300 2200 5700 2200
-Wire Wire Line
-	6900 2500 6800 2500
-Wire Wire Line
-	6900 2700 6800 2700
-Wire Wire Line
-	6800 2700 6800 2800
-Wire Wire Line
-	2900 3900 2900 3700
-Wire Wire Line
-	3100 6100 3100 6300
-Wire Wire Line
-	3800 4400 4000 4400
-Wire Wire Line
-	3800 4600 4000 4600
-Wire Wire Line
-	3800 4900 4000 4900
-Wire Wire Line
-	6800 2500 6800 2200
-Connection ~ 6800 2200
-Wire Wire Line
-	4700 2200 4800 2200
-Wire Wire Line
-	3800 5000 4000 5000
-Wire Wire Line
-	6400 2500 6400 2600
-Wire Wire Line
-	6400 2600 6900 2600
-Wire Wire Line
-	1000 5200 1000 4900
-Connection ~ 1000 5000
-Wire Wire Line
-	2200 5100 1400 5100
-Connection ~ 1400 5100
-Wire Wire Line
-	1400 4400 1400 4300
-Wire Wire Line
-	1400 4300 1000 4300
-Connection ~ 1000 4300
-Wire Wire Line
-	1000 5800 1400 5800
-Wire Wire Line
-	1400 5800 1400 5700
-Connection ~ 1000 5800
 Text Notes 4900 5400 0    60   ~ 0
 Extra LEDs (w/ limiting resistors) \non the unused pins?
 $Comp
@@ -284,8 +288,7 @@ NoConn ~ 3800 5500
 NoConn ~ 3800 5400
 NoConn ~ 3800 5300
 NoConn ~ 3800 5200
-NoConn ~ 3800 5100
-NoConn ~ 3800 4700
+NoConn ~ 3800 4600
 NoConn ~ 2200 5700
 NoConn ~ 2200 5600
 NoConn ~ 2200 5500
@@ -365,7 +368,7 @@ Text Label 4100 1200 0    60   ~ 0
 switch_control
 Text HLabel 7300 2200 2    60   Input ~ 0
 powerpath_vdd
-Text HLabel 4000 4600 2    60   Input ~ 0
+Text HLabel 4000 4700 2    60   Input ~ 0
 led_status
 Text HLabel 4000 4800 2    60   Output ~ 0
 led_ctrl
@@ -402,7 +405,7 @@ $EndComp
 Text Notes 4050 4050 0    60   ~ 0
 jumper towards DS2712::LED1 for charger activity monitoring
 Text Notes 4900 4400 0    60   ~ 0
-P2 (INT0) for power button sensing\nP3 (INT1) for charger status sensing\nP4 for led status sensing (polled)
+P2 (INT0) for power button sensing\nP3 (INT1) for charger status sensing\nP5 for led status sensing (polled)
 $Comp
 L GND #PWR07
 U 1 1 53DB8078
