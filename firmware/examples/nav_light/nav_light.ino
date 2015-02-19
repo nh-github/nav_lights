@@ -40,23 +40,6 @@ lightingThread light = lightingThread();
 // One Controller to run them all
 ThreadController controller = ThreadController();
 
-typedef void (*void_callback)();
-
-void baa(){
-  Serial.print("baa");
-}
-
-void_callback func = &baa;
-
-//void func ( void (*f)(int) );
-
-void callbaa( void (*f)()){
-  f();
-}
-  void callbaa_static(){
-  func();
-}
-
 void setup() {
   Serial.begin(115200);  // SERIAL DEBUG
   pinMode(LED_PIN, OUTPUT);
