@@ -69,8 +69,8 @@ void setup() {
   // threading setup
   ui.pin = PWR_SENSE;
   ui.setInterval(50);
-  ui.cb_hold = & shutdown_hold;
-  ui.cb_push = & change_mode;
+  ui.cb_hold = shutdown_hold;
+  ui.cb_push = change_mode;
   
   //led1.pin = MISC_STAT;
   //led1.setInterval(500);
