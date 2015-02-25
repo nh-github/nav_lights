@@ -1,14 +1,5 @@
 // basic firmware for navigation light [2nd] prototype
 
-/*
-TODO: try threading
- * SimpleThread as example
- ** blink green LED on LED_PIN <- 1 Hz?
- ** blink yellow LED (MISC_STAT) <- 5 Hz?
- ** blink/pulse HPLED (LED_CTRL) <- delay a while, low power for now
- ** print stuff?
- ** monitor pin
- */
 
 #include "Thread.h"
 #include "ThreadController.h"
@@ -31,7 +22,7 @@ TODO: try threading
 
 
 // Create thread objects
-// TODO: check creation in setup()
+// TODO: check creation in setup() <- mis-scoped for loop() (do all in setup?)
 buttonThread ui = buttonThread();
 indicatorThread led1 = indicatorThread();
 indicatorThread led2 = indicatorThread();
@@ -54,23 +45,12 @@ void setup() {
   ui.setInterval(50);
   ui.cb_hold = shutdown_hold;
   ui.cb_push = change_mode;
-  
-  //led1.pin = MISC_STAT;
-  //led1.setInterval(500);
-  //led1.enabled = false;  // turn on later
-
-  //led2.pin = LED_PIN;
-  //led2.setInterval(500);  // 1 Hz cyclic, 2 Hz changes
-  //led2.enabled = false;
 
   light.pin = LED_CTRL;
   light.setInterval(20);
-  //light.enabled = false;
 
 
   controller.add(&ui);
-  //controller.add(&led1);
-  //controller.add(&led2);
   controller.add(&light);
 
   for(int i=9; i>0; i--){
@@ -80,13 +60,6 @@ void setup() {
   }
   digitalWrite(MISC_STAT, LOW);
 
-//  Serial.print("foo\n");
-//  //baa();
-//  callbaa(baa);
-//  callbaa_static();
-//  Serial.print("\nbar\n");
-//  delay(10000);
-
 }  // setup
 
 
@@ -94,22 +67,9 @@ void loop() {
   //Serial.print("loop\n");
 
   controller.run();
-//  static long timer = 0;
-//  if(timer < millis()){
-//    timer = millis() + 500;
-//    if(2==ui.get_state()){
-//      //light.LED_mode += 1;
-//      light.LED_mode %= light.LED_mode_lim;
-//    }
-//  }
   digitalWrite(LED_PIN, digitalRead(PWR_SENSE));
 
   delay(20);
-
-//  // SHUTDOWN
-//  if(4==ui.state){
-//    shutdown_hold(25);
-//  }
 }
 
 void change_mode(int detail){
@@ -127,7 +87,7 @@ void shutdown_hold(int base){
   // kill threads
   // turn off all LEDs
   // turn off power
-  // spin until power removed
+  // blink until power removed
   while(true){
     digitalWrite(MISC_STAT, HIGH);
     delay(base);
