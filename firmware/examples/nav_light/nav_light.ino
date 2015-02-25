@@ -60,6 +60,8 @@ void setup() {
   }
   digitalWrite(MISC_STAT, LOW);
 
+  Serial.print("setup\n");
+  getFreeRam();
 }  // setup
 
 
@@ -97,3 +99,16 @@ void shutdown_hold(int base){
   }
 }
 
+//ref: https://stackoverflow.com/questions/14663543/memory-limits-on-arduino
+int getFreeRam()
+{
+  extern int __heap_start, *__brkval;
+  int v;
+
+  v = (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval);
+
+  Serial.print("Free RAM = ");
+  Serial.println(v, DEC);
+
+  return v;
+}
