@@ -30,7 +30,7 @@ public:
   int pwr_low = 1;
   int pwr_high = 250;
   int LED_mode = 0;
-  int* waveform_address = (int*) &waveform_OFF;
+  const int* waveform_address = waveform_OFF;
   int waveform_index = 0;
   int m_output_pin;
   int m_LED_mode = 0;
