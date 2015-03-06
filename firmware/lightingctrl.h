@@ -49,6 +49,17 @@ public:
     const int* waveform_ptr = waveforms_table[m_LED_mode];
     waveform_ptr += m_waveform_index % waveform_len;
     int val = pgm_read_byte(waveform_ptr);
+    Serial.print("v ");
+    Serial.print(val);
+    Serial.print("; mode=");
+    Serial.print(m_LED_mode);
+    Serial.print("; index=");
+    Serial.print(m_waveform_index);
+    Serial.print("; mod=");
+    Serial.print(m_waveform_index % waveform_len);
+    Serial.print("; ptr=");
+    Serial.print((int)waveform_ptr, HEX);
+    Serial.print("\n  ");
     // move to next sample for next time around
     m_waveform_index++;
     // write the value to the pin
@@ -59,6 +70,13 @@ public:
     m_LED_mode = (m_LED_mode + 1) % int(WAVEFORM_COUNT_E);
     // reset to start of waveform on change
     m_waveform_index = 0;
+    //Serial.print("FOO\n  ");
+    //Serial.print(m_LED_mode);
+    //Serial.print("\n  ");
+
+    //const int waveform_len = waveforms_len[m_LED_mode];
+    //Serial.print(waveform_len);
+    //Serial.print("\n  ");
   }
 };
 
